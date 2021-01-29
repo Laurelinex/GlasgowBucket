@@ -16,16 +16,35 @@ zone_3 = Zone("Southside")
 zone_repository.save(zone_3)
 zone_4 = Zone("East End")
 zone_repository.save(zone_4)
-zone_5 = Zone("West")
+zone_5 = Zone("West End")
 zone_repository.save(zone_5)
 
-location_1 = Location("Necropolis", "A Victorian garden cemetery", zone_1)
+# City Centre
+location_1 = Location("Duke of Wellington Statue", "This beconed statue has become a symbol of Glasgow's quirky sense of humour", zone_1)
 location_repository.save(location_1)
+location_2 = Location("The Lighthouse", "Landmark exhibition space dedicated to architecture, design and the city.", zone_1)
+location_repository.save(location_2)
 
-zone_5.name = "West End"
-zone_repository.update(zone_5)
+# North Glasgow
+location_3 = Location("Speirs Wharf", "Barges and house boats line the canal onto a cobbled street with newly developed canal paths with a network of running and cycle routes.", zone_2)
+location_repository.save(location_3)
 
-location_1.description = "A fascinating Victorian garden cemetery adjacent to Glasgow Cathedral"
-location_repository.update(location_1)
+# Southside
+location_4 = Location("The Hidden Gardens", "Great wee sanctuary in the southside urban sprawl.", zone_3)
+location_repository.save(location_4)
+location_5 = Location("House for an Art Lover", "Combines art gallery and exhibition space, events venue, café, multipurpose artists studios and magnificent visitor attraction into one unique and inspiring venue.", zone_3)
+location_repository.save(location_5)
+
+# East End
+location_6 = Location("The People's Palace", "Well-curated museum to dive deeper into how Glaswegians lived before modern day times.", zone_4)
+location_repository.save(location_6)
+location_7 = Location("Necropolis", "A fascinating Victorian garden cemetery adjacent to Glasgow Cathedral.", zone_4)
+location_repository.save(location_7)
+
+# West End
+location_8 = Location("The Botanic Gardens", "Created in 1817, Glasgow Botanic Gardens feature several glasshouses and incredible plantlife.", zone_5)
+location_repository.save(location_8)
+location_9 = Location("Kelvingrove Art Gallery & Museum", "The most popular attraction in Glasgow. Features vast natural history and art collections.", zone_5)
+location_repository.save(location_9)
 
 pdb.set_trace()
