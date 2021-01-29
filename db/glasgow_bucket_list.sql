@@ -12,5 +12,5 @@ CREATE TABLE locations (
     name VARCHAR(255),
     description TEXT,
     visited BOOLEAN,
-    zone_id INT REFERENCES zones(id)
+    zone_id INT REFERENCES zones(id) ON DELETE CASCADE
 );
