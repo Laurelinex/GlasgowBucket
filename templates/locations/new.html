@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/places" method="POST">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="name" required autofocus>
+  </div>
+
+  <div>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" placeholder="description">
+  </div>
+
+  <div>
+    <label for="zone">Zone:</label>
+    <select id="zone" name="zone_id">
+      {% for zone in all_zones %}
+        <option value="{{zone.id}}">{{zone.name}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div>
+    <label for="visited">Visited?</label>
+    <select id="visited" name="visited">
+      <option value="false">No</option>
+      <option value="true">Yes</option>
+    </select>
+  </div>
+
+  <button type="submit">Add</button>
+</form>
+
+{% endblock %}

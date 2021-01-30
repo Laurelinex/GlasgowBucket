@@ -4,7 +4,7 @@
 <h1>Where to go?</h1>
 
 <table>
-  {% for location in locations %}
+  {% for location in all_locations %}
   <tr>
     <td><a href="/places/{{location.id}}"> {{location.name}} </a></td>
     <td>{{location.description}}</td>

@@ -6,11 +6,13 @@ import repositories.zone_repository as zone_repository
 
 zones_blueprint = Blueprint("zones", __name__)
 
+# Zones index page
 @zones_blueprint.route("/zones")
 def zones():
     zones = zone_repository.select_all()
-    return render_template("zones/index.html", zones = zones)
+    return render_template("zones/index.html", all_zones = zones)
 
+# Show specific zone
 @zones_blueprint.route("/zones/<id>", methods=['GET'])
 def show_zone(id):
     zone = zone_repository.select(id)
