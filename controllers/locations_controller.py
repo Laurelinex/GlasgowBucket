@@ -37,3 +37,28 @@ def create_location():
     location = Location(name, description, zone, visited)
     location_repository.save(location)
     return redirect('/places')
+
+# Edit place page
+@locations_blueprint.route("/places/<id>/edit", methods=['GET'])
+def edit_location(id):
+    location = location_repository.select(id)
+    zones = zone_repository.select_all()
+    return render_template('locations/edit.html', location = location, all_zones = zones)
+
+# Update place info
+@locations_blueprint.route("/places/<id>", methods=['POST'])
+def update_location(id):
+    name = request.form['name']
+    description = request.form['description']
+    zone = request.form['zone_id']
+    visited = request.form['visited']
+    zone = zone_repository.select(request.form['zone_id'])
+    location = Location(name, description, zone, visited, id)
+    location_repository.update(location)
+    return redirect('/places')
+
+# Delete place
+@locations_blueprint.route("/places/<id>/delete", methods=['POST'])
+def delete_location(id):
+    location_repository.delete(id)
+    return redirect('/places')
