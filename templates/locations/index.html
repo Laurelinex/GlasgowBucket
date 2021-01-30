@@ -9,7 +9,14 @@
     <td><a href="/places/{{location.id}}"> {{location.name}} </a></td>
     <td>{{location.description}}</td>
     <td>{{location.zone.name}}</td>
-    <!-- <td>{{location.visited}}</td> -->
+    <td>
+      {% if location.visited == True %}
+        <p style="color: green">√</p>
+      {% else %}
+        <p></p>
+      {% endif %}
+    </td>
+    
   </tr>
   {% endfor %}
 </table>

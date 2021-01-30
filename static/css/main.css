@@ -13,6 +13,11 @@ body {
     padding: 0;
 }
 
+/* For MVP version */
 h1, p {
     color: #0C1C2C;
+}
+
+#content {
+    margin: 2%;
 }

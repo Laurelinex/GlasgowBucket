@@ -6,6 +6,13 @@
     <hr>
     <p>{{location.description}}</p>
     <p>{{location.zone.name}}</p>
+    {% if location.visited == True %}
+      <p style="color: green">You've been! √</p>
+    {% else %}
+    {% endif %}
+
+    </p>
+    
     <p><a href="/places/{{location.id}}/edit">Edit</a></p>
     <form class="delete-form" action="/places/{{location.id}}/delete" method="POST">
       <button>Delete</button>
