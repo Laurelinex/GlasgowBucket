@@ -1,0 +1,14 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue";
+    background-color: #EDF0F1;
+    color: #0C1C2C;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin: 0;
+    padding: 0;
+}

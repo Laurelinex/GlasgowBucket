@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glasgow Bucket List</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+
 </head>
 <body>
     <div class="wrapper">
@@ -12,23 +17,24 @@
                 <div class="container">
                     <a href=""></a>
                     <!-- logo -->
-                    <ul class="main-mav">
+                    <ul class="main-nav">
+                        <li><a href="">Home</a></li>
                         <li><a href="">About Glasgow</a></li>
                         <li><a href="">Area Guide</a></li>
                         <li><a href="">Visited</a></li>
                         <li><a href="">To See</a></li>
-                        <li><a href="">ADD TO BUCKET</a></li>
+                        <div>
+                            <li class="main-nav-right"><a href="">ADD TO BUCKET</a></li>
+                        </div>
                     </ul>
                 </div>
             </nav>
         </header>
 
-
-    <footer>
-        <div class="container_row">
-            <p>© 2021 Laureline's Stuff - All Rights Reserved</p>
-        </div>
-    </footer>
     </div>
+
+    <footer class="footer">
+        © 2021 Laureline's Stuff - All Rights Reserved
+    </footer>
 </body>
 </html>
