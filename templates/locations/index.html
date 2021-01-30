@@ -7,16 +7,18 @@
   {% for location in all_locations %}
   <tr>
     <td><a href="/places/{{location.id}}"> {{location.name}} </a></td>
-    <td>{{location.description}}</td>
-    <td>{{location.zone.name}}</td>
-    <td>
+    <td rowspan="2">{{location.description}}</td>
+    <td rowspan="2">{{location.zone.name}}</td>
+    <td rowspan="2">
       {% if location.visited == True %}
         <p style="color: green">√</p>
       {% else %}
         <p></p>
       {% endif %}
     </td>
-    
+  </tr>
+  <tr>
+    <td><img src="" alt="Beconed Wellington">[PICTURE]</td>
   </tr>
   {% endfor %}
 </table>
