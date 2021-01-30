@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>The Five Glasgow Areas</h1>
+
+<table>
+  {% for zone in zones %}
+  <tr>
+    <td><a href="/zones/{{zone.id}}"> {{zone.name}} </a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

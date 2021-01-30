@@ -42,7 +42,7 @@ def select(id):
 
     if result is not None:
         zone = zone_repository.select(result['zone_id'])
-        location = Location(result['title'], result['genre'], result['publisher'], zone, result['id'] )
+        location = Location(result['name'], result['description'], zone, result['visited'], result['id'])
     return location
 
 def update(location):
