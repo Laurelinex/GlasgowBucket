@@ -16,17 +16,24 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header">
+        <header>
             <nav class="navbar">
-                <div class="logo">
-                    <img class="logo" src="{{url_for('static', filename='logo_gbl_white_2.png')}}" alt="logo">
-                </div>
-                <div class="main-nav">
-                    <ul class="header_links_ul">
+                <div class="container">
+                    <a href=""></a>
+                    <!-- logo -->
+                    <ul class="main-nav">
+                        <!-- <li><a href="/">Home</a></li>
+                        <li><a href="">About Glasgow</a></li>
+                        <li><a href="/zones">Area Guide</a></li>
+                        <li><a href="/places">Places</a></li> -->
+                        <!-- <li><a href="">To See</a></li> -->
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About Glasgow</a></li>
                         <li><a href="/zones">Area Guide</a></li>
-                        <li><a href="/places">Bucket List</a></li>
+                        <div>
+                            <!-- <li class="main-nav-right"><a href="/places/new">ADD TO BUCKET</a></li> -->
+                            <li class="main-nav-right"><a href="/places">Bucket List</a></li>
+                        </div>
                     </ul>
                 </div>
             </nav>

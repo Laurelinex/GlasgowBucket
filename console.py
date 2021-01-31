@@ -22,29 +22,29 @@ zone_repository.save(zone_5)
 # City Centre
 location_1 = Location("Duke of Wellington Statue", "This beconed statue has become a symbol of Glasgow's quirky sense of humour.", zone_1, "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F9637735a-8f9e-11e9-93de-1ab642214bd5.jpg?crop=2667%2C1500%2C0%2C0&resize=1180", True)
 location_repository.save(location_1)
-location_2 = Location("The Lighthouse", "Landmark exhibition space dedicated to architecture, design and the city.", zone_1)
+location_2 = Location("The Lighthouse", "Landmark exhibition space dedicated to architecture, design and the city.", zone_1, "https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzLzNmYzFkZjE1LTFkMDMtNGQzOC05ODlmLTc3YWIwMDE5MjM5YjkwOGFhNzliMmRhYjM2NzIwOF9MaWdodGhvdXNlX2dsYXNnb3dfc3BpcmFsX3N0YWlyY2FzZS5qcGciXSxbInAiLCJjb252ZXJ0IiwiIl0sWyJwIiwiY29udmVydCIsIi1xdWFsaXR5IDgxIC1hdXRvLW9yaWVudCJdLFsicCIsInRodW1iIiwiNzgweDUyMCMiXV0/Lighthouse_glasgow_spiral_staircase.jpg")
 location_repository.save(location_2)
 
 # North Glasgow
-location_3 = Location("Speirs Wharf", "Barges and house boats line the canal onto a cobbled street with newly developed canal paths with a network of running and cycle routes.", zone_2)
+location_3 = Location("Speirs Wharf", "Barges and house boats line the canal onto a cobbled street with newly developed canal paths with a network of running and cycle routes.", zone_2, "https://mr1.homeflow-assets.co.uk/files/photo/image/16509/8339/_x683/GCY190045_16.jpg")
 location_repository.save(location_3)
 
 # Southside
-location_4 = Location("The Hidden Gardens", "Great wee sanctuary in the southside urban sprawl.", zone_3)
+location_4 = Location("The Hidden Gardens", "Great wee sanctuary in the southside urban sprawl.", zone_3, "https://media.timeout.com/images/105374549/630/472/image.jpg")
 location_repository.save(location_4)
-location_5 = Location("House for an Art Lover", "Combines art gallery and exhibition space, events venue, café, multipurpose artists studios and magnificent visitor attraction into one unique and inspiring venue.", zone_3)
+location_5 = Location("House for an Art Lover", "Combines art gallery and exhibition space, events venue, café, multipurpose artists studios and magnificent visitor attraction into one unique and inspiring venue.", zone_3, "https://files.list.co.uk/images/2019/10/23/house-for-an-art-lover-1280px-LST375407.jpg")
 location_repository.save(location_5)
 
 # East End
-location_6 = Location("The People's Palace", "Well-curated museum to dive deeper into how Glaswegians lived before modern day times.", zone_4)
+location_6 = Location("The People's Palace", "Well-curated museum to dive deeper into how Glaswegians lived before modern day times.", zone_4, "https://prodglportalv2.azureedge.net/cache/9/9/9/f/d/d/999fdd47ccb23fc992e922f212777f78cece67d0.jpg")
 location_repository.save(location_6)
-location_7 = Location("Necropolis", "A fascinating Victorian garden cemetery adjacent to Glasgow Cathedral.", zone_4)
+location_7 = Location("Necropolis", "A fascinating Victorian garden cemetery adjacent to Glasgow Cathedral.", zone_4, "https://www.thescottishsun.co.uk/wp-content/uploads/sites/2/2020/02/NINTCHDBPICT000477166197.jpg?strip=all&w=960")
 location_repository.save(location_7)
 
 # West End
-location_8 = Location("The Botanic Gardens", "Created in 1817, Glasgow Botanic Gardens feature several glasshouses and incredible plantlife.", zone_5)
+location_8 = Location("The Botanic Gardens", "Created in 1817, Glasgow Botanic Gardens feature several glasshouses and incredible plantlife.", zone_5, "https://cdn.shopify.com/s/files/1/0235/4729/files/1_eabc443d-7f9e-46dc-8fd0-1ff91acc64c1.jpg?v=1499621290")
 location_repository.save(location_8)
-location_9 = Location("Kelvingrove Art Gallery & Museum", "The most popular attraction in Glasgow. Features vast natural history and art collections.", zone_5)
+location_9 = Location("Kelvingrove Art Gallery & Museum", "The most popular attraction in Glasgow. Features vast natural history and art collections.", zone_5, "https://i.pinimg.com/originals/1a/2e/6b/1a2e6bfa5836a827d8332cedef5d4e99.jpg")
 location_repository.save(location_9)
 
 pdb.set_trace()
