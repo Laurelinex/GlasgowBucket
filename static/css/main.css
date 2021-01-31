@@ -3,7 +3,12 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue";
+    /* font-family: "Rubik", "Helvetica Neue", "sans-serif"; */
+    /* issues with loading - to ask */
+    font-family: "Helvetica Neue", "sans-serif";
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
     background-color: #EDF0F1;
     color: #0C1C2C;
     min-height: 100%;

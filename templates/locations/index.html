@@ -6,19 +6,23 @@
 <table>
   {% for location in all_locations %}
   <tr>
-    <td><a href="/places/{{location.id}}"> {{location.name}} </a></td>
+    <td id="name-cell"><a href="/places/{{location.id}}"> {{location.name}} </a></td>
     <td rowspan="2">{{location.description}}</td>
-    <td rowspan="2">{{location.zone.name}}</td>
-    <td rowspan="2">
+    <td rowspan="2" id="zone-cell">{{location.zone.name}}</td>
+    <td rowspan="2" id="tick-cell">
       {% if location.visited == True %}
-        <p style="color: green">√</p>
+        <p style="color: green">  √  </p>
       {% else %}
         <p></p>
       {% endif %}
     </td>
   </tr>
   <tr>
-    <td><img src="{{location.picture}}" alt=""></td>
+    <td id="image-cell">
+      {% if location.picture | length != 0 %}
+      <img src="{{location.picture}}" alt="picture of {{location.name}}">
+      {% endif %}
+    </td>
   </tr>
   {% endfor %}
 </table>
