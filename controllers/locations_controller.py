@@ -10,8 +10,9 @@ locations_blueprint = Blueprint("locations", __name__)
 # Locations index page
 @locations_blueprint.route("/places")
 def locations():
+    zones = zone_repository.select_all()
     locations = location_repository.select_all()
-    return render_template('locations/index.html', all_locations = locations)
+    return render_template('locations/index.html', all_locations = locations, all_zones = zones)
 
 # Show a specific place
 @locations_blueprint.route("/places/<id>", methods=['GET'])
@@ -64,3 +65,11 @@ def update_location(id):
 def delete_location(id):
     location_repository.delete(id)
     return redirect('/places')
+
+# Show a list of filtered places
+@locations_blueprint.route("/filtered", methods=['POST'])
+def show_filtered_locations_by_zone():
+    zone_id = request.form['zone_id']
+    zone = zone_repository.select(zone_id)
+    locations = location_repository.select_by_zone(zone)
+    return render_template('locations/filtered.html', filtered_locations = locations)

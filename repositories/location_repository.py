@@ -50,3 +50,17 @@ def update(location):
     values = [location.name, location.description, location.zone.id, location.picture, location.visited, location.id]
     print(values)
     run_sql(sql, values)
+
+def select_by_zone(zone):
+    locations = []
+    sql = "SELECT * FROM locations WHERE zone = %s"
+    values = [zone]
+    results = run_sql(sql, values)
+
+    for row in results:
+        zone = zone_repository.select(row['zone_id'])
+        location = Location(row['name'], row['description'], zone, row['picture'], row['visited'], row['id'])
+        locations.append(location)
+    return locations
+
+# def select_by_status(status):

@@ -1,19 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Your Bucket List!</h1>
+<h1>Your Bucket List</h1>
 
-<!-- <h4>Search by:</h4>
+<div class="add-button">
+  <a href="/places/new">NEW</a>
+</div>
 
-<hr> -->
+<form action="/filtered" method="POST">
+  <div>
+    <h4>Filter by:</h4>
+    <label for="zone">Zone</label>
+    <select name="zone_id">
+      {% for zone in all_zones %}
+        <option value="{{zone.id}}">{{zone.name}}</option>
+      {% endfor %}
+    </select>
+    <!-- <label for="visited">Ticked Off</label>
+    <select name="visited">
+      <option value="False">Not yet</option>
+      <option value="True">Yes</option>
+    </select> -->
+    <button type="submit">Filter</button>
+  </div>
+</form>
+
+<hr>
 
 <table>
   {% for location in all_locations %}
   <tr>
-    <td id="name-cell"><a href="/places/{{location.id}}"> {{location.name}} </a></td>
+    <td class="name-cell"><a href="/places/{{location.id}}"> {{location.name}} </a></td>
     <td rowspan="2">{{location.description}}</td>
-    <td rowspan="2" id="zone-cell">{{location.zone.name}}</td>
-    <td rowspan="2" id="tick-cell">
+    <td rowspan="2" class="zone-cell">{{location.zone.name}}</td>
+    <td rowspan="2" class="tick-cell">
       {% if location.visited == True %}
         <p style="color: green">  √  </p>
       {% else %}
@@ -22,7 +42,7 @@
     </td>
   </tr>
   <tr>
-    <td id="image-cell">
+    <td class="image-cell">
       {% if location.picture | length != 0 %}
       <img src="{{location.picture}}" alt="picture of {{location.name}}">
       {% endif %}
