@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    /* scroll-padding-top: 70px; */
 }
 
 body {
@@ -16,6 +17,7 @@ body {
     grid-template-rows: 1fr auto;
     margin: 0;
     padding: 0;
+    /* scroll-padding-top: 70px; */
 }
 
 /* For MVP version */
