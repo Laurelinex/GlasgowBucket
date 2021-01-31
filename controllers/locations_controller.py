@@ -32,9 +32,10 @@ def create_location():
     name = request.form['name']
     description = request.form['description']
     zone_id = request.form['zone_id']
+    picture = request.form['picture']
     visited = request.form['visited']
     zone = zone_repository.select(zone_id)
-    location = Location(name, description, zone, visited)
+    location = Location(name, description, zone, picture, visited)
     location_repository.save(location)
     return redirect('/places')
 
@@ -51,9 +52,10 @@ def update_location(id):
     name = request.form['name']
     description = request.form['description']
     zone = request.form['zone_id']
+    picture = request.form['picture']
     visited = request.form['visited']
     zone = zone_repository.select(request.form['zone_id'])
-    location = Location(name, description, zone, visited, id)
+    location = Location(name, description, zone, picture, visited, id)
     location_repository.update(location)
     return redirect('/places')
 

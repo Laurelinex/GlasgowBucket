@@ -10,9 +10,10 @@
       <p style="color: green">You've been! √</p>
     {% else %}
     {% endif %}
-
     </p>
-    
+    {% if location.picture | length != 0 %}
+      <img src="{{location.picture}}" alt="Picture of {{location.name}}">
+    {% endif %}
     <p><a href="/places/{{location.id}}/edit">Edit</a></p>
     <form class="delete-form" action="/places/{{location.id}}/delete" method="POST">
       <button>Delete</button>

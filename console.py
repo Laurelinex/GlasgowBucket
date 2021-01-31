@@ -20,7 +20,7 @@ zone_5 = Zone("West End")
 zone_repository.save(zone_5)
 
 # City Centre
-location_1 = Location("Duke of Wellington Statue", "This beconed statue has become a symbol of Glasgow's quirky sense of humour.", zone_1, "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F9637735a-8f9e-11e9-93de-1ab642214bd5.jpg?crop=2667%2C1500%2C0%2C0&resize=1180")
+location_1 = Location("Duke of Wellington Statue", "This beconed statue has become a symbol of Glasgow's quirky sense of humour.", zone_1, "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F9637735a-8f9e-11e9-93de-1ab642214bd5.jpg?crop=2667%2C1500%2C0%2C0&resize=1180", True)
 location_repository.save(location_1)
 location_2 = Location("The Lighthouse", "Landmark exhibition space dedicated to architecture, design and the city.", zone_1)
 location_repository.save(location_2)
