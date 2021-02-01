@@ -4,8 +4,8 @@ from models.zone import Zone
 from models.location import Location
 
 def save(zone):
-    sql = "INSERT INTO zones (name) VALUES (%s) RETURNING *"
-    values = [zone.name]
+    sql = "INSERT INTO zones (name, description, picture) VALUES (%s, %s, %s) RETURNING *"
+    values = [zone.name, zone.description, zone.picture]
     results = run_sql(sql, values)
     id = results[0]['id']
     zone.id = id
@@ -27,7 +27,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        zone = Zone(row['name'], row['id'])
+        zone = Zone(row['name'], row['description'], row['picture'], row['id'])
         zones.append(zone)
     return zones
 
@@ -38,10 +38,10 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        zone = Zone(result['name'], result['id'] )
+        zone = Zone(result['name'], result['description'], result['picture'], result['id'] )
     return zone
 
 def update(zone):
     sql = "UPDATE zones SET name = %s WHERE id = %s"
-    values = [zone.name, zone.id]
+    values = [zone.name, zone.description, zone.picture, zone.id]
     run_sql(sql, values)

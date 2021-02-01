@@ -4,7 +4,9 @@ DROP TABLE IF EXISTS zones;
 
 CREATE TABLE zones (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    description TEXT,
+    picture TEXT
 );
 
 CREATE TABLE locations (

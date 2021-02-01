@@ -8,15 +8,15 @@ import repositories.zone_repository as zone_repository
 location_repository.delete_all()
 zone_repository.delete_all()
 
-zone_1 = Zone("City Centre")
+zone_1 = Zone("City Centre", "The stunning Victorian architecture and grid system of streets make Glasgow’s bustling city centre a distinctive, culture-rich neighbourhood, with George Square – the city’s principal square – its civic heart.", "https://www.fineholm.co.uk/wp-content/uploads/2016/04/property-for-rent-in-glasgow2.jpg")
 zone_repository.save(zone_1)
-zone_2 = Zone("North Glasgow")
+zone_2 = Zone("North Glasgow", "The city's north has rejuvenated in recent years to become an urban playground, a wonder of wildlife, green space and hub of creativity with a community spirit; and all without forgetting its important industrial heritage based on the canal network.  So what better way to start ticking visits off your bucket list than on its very own water pathway?", "https://peoplemakeglasgow.com/images/Neighbourhoods/North/Speirs_Wharf_995.jpg")
 zone_repository.save(zone_2)
-zone_3 = Zone("Southside")
+zone_3 = Zone("Southside", "Located just south of the River Clyde and close to the city centre, this part of town is densely packed with traditional 19th century tenements and an abundance of things to see and do.", "http://s1homesblog.s1thecompany.com/wp-content/uploads/2018/03/pollok-park.-lowjpg-1024x670.jpg")
 zone_repository.save(zone_3)
-zone_4 = Zone("East End")
+zone_4 = Zone("East End", "Just a short walk from Glasgow city centre lies the east, the historic heart of the city. Home to the city's oldest buildings and some of the most exciting new developments in Glasgow, this neighbourhood offers an easily accessible blend of creativity and heritage, brought to life by a friendly community spirit.", "https://peoplemakeglasgow.com/images/Neighbourhoods/East/st_mungo_mural.jpg")
 zone_repository.save(zone_4)
-zone_5 = Zone("West End")
+zone_5 = Zone("West End", "With amazing historic attractions tucked in between leafy surroundings, award-winning food and drink and a friendly character, the west has it all.", "https://blog.laterooms.com/wp-content/uploads/2014/04/Ashton-Lane-daytime.jpg")
 zone_repository.save(zone_5)
 
 # City Centre

@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <div>
-    <p>{{zone.name}}</p>
-    <hr>
-    <!-- ABOUT content -->
-
-  </div>
+<h2>{{zone.name}}</h2>
+<hr>
+<br>
+<main class="zone-container">
+  <p>{{zone.description}}</p>
+  <img src="{{zone.picture}}" alt="Picture of {{zone.name}}">
+</main>
 
 {% endblock %}
