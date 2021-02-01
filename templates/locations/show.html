@@ -11,13 +11,18 @@
     {% else %}
     {% endif %}
     </p>
+
+    <!-- to style and align -->
+    <div>
+      <p><a href="/places/{{location.id}}/edit"><i class="fas fa-pencil-alt"></i></a></p>
+      <form class="delete-form" action="/places/{{location.id}}/delete" method="POST">
+        <button><i class="far fa-trash-alt"></i></button>
+      </form>
+    </div>
+    
     {% if location.picture | length != 0 %}
       <img src="{{location.picture}}" alt="Picture of {{location.name}}">
     {% endif %}
-    <p><a href="/places/{{location.id}}/edit">Edit</a></p>
-    <form class="delete-form" action="/places/{{location.id}}/delete" method="POST">
-      <button>Delete</button>
-    </form>
   </div>
 
 {% endblock %}
