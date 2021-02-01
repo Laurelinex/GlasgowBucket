@@ -41,9 +41,9 @@
 
 <div class="dropdown" style="float: left;">
   <button class="dropbtn">Ticked Off</button>
-  <div class="dropdown-content">
-  <a href="#">Not yet</a>
-  <a href="#">Yes</a>
+  <div class="dropdown-content" style="left:0;">
+    <!-- <a href="#">Not yet</a> -->
+    <!-- <a href="#">Yes</a>  -->
   </div>
 </div>
 
@@ -61,7 +61,6 @@
     <td rowspan="2" class="zone-cell">{{location.zone.name}}</td>
     <td rowspan="2" class="tick-cell">
       {% if location.visited == True %}
-        <!-- <p style="color: green">  √  </p> -->
         <i class="fas fa-check-circle" style="color: rgb(18, 160, 13);"></i>
       {% else %}
         <i class="far fa-circle" style="color: #D79033;"></i>

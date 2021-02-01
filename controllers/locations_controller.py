@@ -72,3 +72,10 @@ def show_filtered_locations_by_zone(zone_id):
     zone = zone_repository.select(zone_id)
     locations = location_repository.select_by_zone(zone)
     return render_template('locations/filtered_zone.html', filtered_locations = locations, zone = zone)
+
+# Show a list of filtered places by status (visited True/False)
+@locations_blueprint.route("/places/filtered/<visited>", methods=['GET'])
+def show_filtered_locations_by_status(visited):
+    zones = zone_repository.select_all()
+    locations = location_repository.select_by_status(visited)
+    return render_template('locations/filtered_status.html', filtered_locations = locations, all_zones = zones)

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- <table>
+    {% for location in filtered_locations %}
+    <tr>
+      <td class="name-cell"><a href="/places/{{zone.id}}"> {{location.name}} </a></td>
+      <td rowspan="2">{{location.description}}</td>
+      <td rowspan="2" id="zone-cell">{{location.zone.name}}</td>
+      <td rowspan="2" id="tick-cell">
+        {% if location.visited == True %}
+        <i class="fas fa-check-circle" style="color: rgb(18, 160, 13);"></i>
+        {% else %}
+        <i class="far fa-circle" style="color: #D79033;"></i>
+        {% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+        {% if location.picture | length != 0 %}
+        <img src="{{location.picture}}" alt="picture of {{location.name}}">
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+</table> -->
+
+{% endblock %}
