@@ -22,12 +22,10 @@ body {
     grid-template-columns: 75% 25%;
     /* grid-template-rows: 100px 300px; */
     grid-gap: 10px;
-    background-color: hotpink;
     padding: 10px;
 }
 
 .grid-container main {
-    background-color: yellow;
     padding-right: 20px;
 }
 
@@ -38,8 +36,16 @@ body {
     width: 10%;
 }
 
+.image-center-aside {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .grid-container aside {
-    background-color: yellowgreen;
+    text-align: center;
+    /* border-left: 5px solid #0C1C2C; */
 }
 
 /* For MVP version */
