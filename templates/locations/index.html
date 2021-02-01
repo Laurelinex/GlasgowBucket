@@ -3,11 +3,14 @@
 {% block content %}
 <h1>Your Bucket List</h1>
 
-<div class="add-button">
+<!-- <div class="add-button">
   <a href="/places/new">NEW</a>
-</div>
+</div> -->
 
-<form action="/filtered" method="POST">
+
+
+
+<!-- <form action="/places" method="POST">
   <div>
     <h4>Filter by:</h4>
     <label for="zone">Zone</label>
@@ -16,16 +19,41 @@
         <option value="{{zone.id}}">{{zone.name}}</option>
       {% endfor %}
     </select>
-    <!-- <label for="visited">Ticked Off</label>
+     <label for="visited">Ticked Off</label>
     <select name="visited">
       <option value="False">Not yet</option>
       <option value="True">Yes</option>
-    </select> -->
+    </select> 
     <button type="submit">Filter</button>
   </div>
-</form>
-
+</form> -->
 <hr>
+
+
+<div class="dropdown" style="float: left;">
+  <button class="dropbtn">Zones</button>
+  <div class="dropdown-content" style="left:0;">
+  <a href="#">City Centre</a>
+  <a href="#">North Glasgow</a>
+  <a href="#">Southside</a>
+  <a href="#">West End</a>
+  <a href="#">East End</a>
+  </div>
+</div>
+
+<div class="dropdown" style="float: left;">
+  <button class="dropbtn">Ticked Off</button>
+  <div class="dropdown-content">
+  <a href="#">Not yet</a>
+  <a href="#">Yes</a>
+  </div>
+</div>
+
+<div class="dropdown" style="float: right;">
+  <button class="dropbtn">
+    <a href="/places/new">ADD NEW</a>
+  </button>
+</div>
 
 <table>
   {% for location in all_locations %}
