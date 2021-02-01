@@ -66,7 +66,7 @@ def delete_location(id):
     location_repository.delete(id)
     return redirect('/places')
 
-# Show a list of filtered places
+# Show a list of filtered places by zone
 @locations_blueprint.route("/places/filtered/<zone_id>", methods=['GET'])
 def show_filtered_locations_by_zone(zone_id):
     zone = zone_repository.select(zone_id)

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<!-- <table>
+<table>
     {% for location in filtered_locations %}
     <tr>
       <td class="name-cell"><a href="/places/{{zone.id}}"> {{location.name}} </a></td>
@@ -10,9 +10,9 @@
       <td rowspan="2" id="zone-cell">{{location.zone.name}}</td>
       <td rowspan="2" id="tick-cell">
         {% if location.visited == True %}
-          <p style="color: green">  √  </p>
+        <i class="fas fa-check-circle" style="color: rgb(18, 160, 13);"></i>
         {% else %}
-          <p></p>
+        <i class="far fa-circle" style="color: #D79033;"></i>
         {% endif %}
       </td>
     </tr>
@@ -24,6 +24,6 @@
       </td>
     </tr>
     {% endfor %}
-</table> -->
+</table>
 
 {% endblock %}
