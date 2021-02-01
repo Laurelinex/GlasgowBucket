@@ -20,22 +20,24 @@
 </head>
 <body>
     <div class="wrapper">
+
+        <!-- Header starts -->
         <header>
             <nav class="navbar">
                 <div class="container">
-                    <a href=""></a>
+                    <a href="/"><img class="logo" src="{{url_for('static', filename='logo_gbl_white_2.png')}}" alt="logo"></a>
                     <!-- logo -->
                     <ul class="main-nav">
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About Glasgow</a></li>
                         <li><a href="/zones">Area Guide</a></li>
-                        <div>
-                            <li class="main-nav-right"><a href="/places">Bucket List</a></li>
-                        </div>
+                        <li><a id="bucket-list-link" href="/places">Bucket List</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
+        <!-- Header ends -->
+
         <section id="content">
             {% block content %}
       
