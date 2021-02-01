@@ -17,6 +17,30 @@ body {
     margin: 0;
     padding: 0;
 }
+.grid-container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    /* grid-template-rows: 100px 300px; */
+    grid-gap: 10px;
+    background-color: hotpink;
+    padding: 10px;
+}
+
+.grid-container main {
+    background-color: yellow;
+    padding-right: 20px;
+}
+
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+
+.grid-container aside {
+    background-color: yellowgreen;
+}
 
 /* For MVP version */
 h1, p {

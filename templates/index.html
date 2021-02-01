@@ -2,8 +2,34 @@
 
 {% block content %}
 
-<h1>Glasgow Bucket List</h1>
-<p>The best things to do in Glasgow!</p>
-<!-- PLACEHOLDER -->
+<div class="grid-container">
+    <main>
+        <h1>A Bucket List for Glasgow</h1>
+        <h3>What’s a Bucket List?</h3>
+        <p>
+            If you have never heard of the term “bucket list”, it is a list of all the goals you want to achieve, dreams you want to fulfill, and life experiences you wish to experience <s> before you die</s> whilst living in this great city!
+        </p>
+        <img class="image-center" src="{{url_for('static', filename='why.png')}}" alt="Wondering stickman">
+        <h3>Why a Bucket List?</h3>
+        <p>
+            Whether you're new to the city or been in Glasgow longer than the Duke of Wellington himself, there is always something new to learn about your city.
+        </p>
+        <p>
+            Having a bucket list of all the things there is to do might remind you of what’s available so that you can go out and make sure you've check them all out!
+        </p>
+        <p>
+            It’s also a list to identify what you might want to do, whether it’s big or small, purposeful or random. It’s just like planning all the highlights for YOUR day-to-day life. Get ready for new-found enthusiasm knowing what you have planned ahead in Glasgow!
+        </p>
+        <p>
+            Even though this bucket list is already filled with goals by default, you can still find many new things to do and add to your own list.
+        </p>
+        <img class="image-center" src="{{url_for('static', filename='yay.png')}}" alt="Happy stickman">
+        <h3>Create Your Bucket List</h3>
+        <p>
+            Click the 'Bucket List' icon at the top of the page, have a scroll through the available places to visit and tweak it to your liking. You can remove and add things to your bucket until it 100% looks like what you want to do.
+        </p>
+    </main>
+    <aside>Aside</aside>
+</div>
 
 {% endblock %}

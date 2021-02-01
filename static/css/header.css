@@ -43,26 +43,3 @@
     background: #D79033;
     
 }
-
-/* MVP set up - works fine */
-/* .main-nav {
-    display: flex;
-    background-color: #325064;
-    margin: 0;
-    padding: 10px;
-}
-
-.main-nav li {
-    list-style: none;
-}
-
-.main-nav li a {
-    display: block;
-    background: #0C1C2C;
-    color: #EDF0F1;
-    text-decoration: none;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 50px;
-    border: 1px solid #EDF0F1;
-} */
