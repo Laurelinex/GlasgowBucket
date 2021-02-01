@@ -5,11 +5,18 @@
 
 <h4> Glasgow is divided into five distinct regions: the city centre, North Glasgow, the Southside, the East End and the West End.</h4>
 
-<table>
-  {% for zone in all_zones %}
-  <tr>
-    <td><a href="/zones/{{zone.id}}"> {{zone.name}} </a></td>
-  </tr>
-  {% endfor %}
-</table>
+<aside>
+  <table>
+    {% for zone in all_zones %}
+    <tr>
+      <td><a href="/zones/{{zone.id}}"> {{zone.name}} </a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</aside>
+
+<aside>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Glasgow_districts_draft1.png/1200px-Glasgow_districts_draft1.png" alt="Map of Glasgow zones">
+</aside>
+
 {% endblock %}

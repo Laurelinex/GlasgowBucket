@@ -1,52 +1,29 @@
-/* input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-  
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-  
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
 .new-form-container {
-    background-color: purple;
-    border-radius: 5px;
-    background-color: #f2f2f2;
     padding: 20px;
-} */
+}
 
-/* .create-new-form input[type=text], select {
+.create-new-form input[type=text], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #0C1C2C;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
-.create-new-form input[type=submit] {
+.create-new-form button[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
-    color: white;
+    background-color: #57A6C7;
+    color: #0C1C2C;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-} */
+}
+
+.create-new-form button[type=submit]:hover {
+    background-color: #0C1C2C;
+    color: #EDF0F1;
+}
