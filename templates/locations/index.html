@@ -33,11 +33,9 @@
 <div class="dropdown" style="float: left;">
   <button class="dropbtn">Zones</button>
   <div class="dropdown-content" style="left:0;">
-  <a href="#">City Centre</a>
-  <a href="#">North Glasgow</a>
-  <a href="#">Southside</a>
-  <a href="#">West End</a>
-  <a href="#">East End</a>
+    {% for zone in all_zones %}
+    <a href="/places/filtered/{{zone.id}}"> {{zone.name}}</a>
+    {% endfor %}
   </div>
 </div>
 

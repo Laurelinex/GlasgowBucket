@@ -66,15 +66,9 @@ def delete_location(id):
     location_repository.delete(id)
     return redirect('/places')
 
-# # Filter places
-# @locations_blueprint.route("/places/<id>/filter", methods=['POST'])
-# def filter(id):
-#     location_repository.select_by_zone(zone)
-
-# # Show a list of filtered places
-# @locations_blueprint.route("/places/filtered", methods=['GET'])
-# def show_filtered_locations_by_zone():
-#     zone_id = request.form['zone_id']
-#     zone = zone_repository.select(zone_id)
-#     locations = location_repository.select_by_zone(zone)
-#     return render_template('locations/filtered.html', filtered_locations = locations, zone = zone)
+# Show a list of filtered places
+@locations_blueprint.route("/places/filtered/<zone_id>", methods=['GET'])
+def show_filtered_locations_by_zone(zone_id):
+    zone = zone_repository.select(zone_id)
+    locations = location_repository.select_by_zone(zone)
+    return render_template('locations/filtered_zone.html', filtered_locations = locations, zone = zone)

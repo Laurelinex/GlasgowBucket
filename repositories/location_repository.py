@@ -53,8 +53,8 @@ def update(location):
 
 def select_by_zone(zone):
     locations = []
-    sql = "SELECT * FROM locations WHERE zone = %s"
-    values = [zone]
+    sql = "SELECT * FROM locations WHERE zone_id = %s"
+    values = [zone.id]
     results = run_sql(sql, values)
 
     for row in results:
