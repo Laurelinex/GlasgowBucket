@@ -1,40 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/places" method="POST">
-  <div>
+<div class="new-form-container">
+  <form class="create-new-form" action="/places" method="POST">
+
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="name" required autofocus>
-  </div>
+    <input type="text" id="name" name="name" placeholder="Name..." required autofocus>
 
-  <div>
     <label for="description">Description:</label>
-    <input type="text" id="description" name="description" placeholder="description">
-  </div>
+    <input type="text" id="description" name="description" placeholder="Description...">
 
-  <div>
     <label for="zone">Zone:</label>
     <select id="zone" name="zone_id">
-      {% for zone in all_zones %}
-        <option value="{{zone.id}}">{{zone.name}}</option>
-      {% endfor %}
+    {% for zone in all_zones %}
+      <option value="{{zone.id}}">{{zone.name}}</option>
+    {% endfor %}
     </select>
-  </div>
 
-  <div>
     <label for="picture">Picture URL:</label>
     <input type="text" id="picture" name="picture" placeholder="picture">
-  </div>
 
-  <div>
     <label for="visited">Visited?</label>
     <select id="visited" name="visited">
       <option value="false">No</option>
       <option value="true">Yes</option>
     </select>
-  </div>
 
-  <button type="submit">Add</button>
-</form>
+    <input type="submit" value="Add">
+
+  </form>
+</div>
 
 {% endblock %}
