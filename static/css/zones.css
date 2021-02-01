@@ -1,3 +1,15 @@
 #zone-pic {
     text-align: center;
 }
+
+.grid-container-reverse {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-gap: 10px;
+    /* padding: 10px; */
+}
+
+#area-map {
+    width: 92%;
+    border-radius: 50px;
+}
