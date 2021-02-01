@@ -13,3 +13,13 @@
     width: 92%;
     border-radius: 50px;
 }
+
+#zone-pic img {
+    border-radius: 50px;
+}
+
+#zones-table a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0C1C2C;
+}

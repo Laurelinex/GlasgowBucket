@@ -3,11 +3,11 @@
 {% block content %}
 <h1>The Five Glasgow Areas</h1>
 
-<h4> Glasgow is divided into five distinct regions: the city centre, North Glasgow, the Southside, the East End and the West End.</h4>
+<p> Glasgow is divided into five distinct regions: the city centre, North Glasgow, the Southside, the East End and the West End.</p>
 
 <div class="grid-container-reverse">
   <aside id="aside-1">
-    <table>
+    <table id="zones-table">
       {% for zone in all_zones %}
       <tr>
         <td><a href="/zones/{{zone.id}}"> {{zone.name}} </a></td>

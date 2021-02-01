@@ -24,6 +24,10 @@ table {
     text-align: center;
 }
 
+.name-cell a {
+  font-weight: bold;
+}
+
 .tick-cell {
     text-align: center;
     width: 3%;
@@ -43,6 +47,11 @@ table img {
     border-radius: 25px;
 }
 
+table a {
+  text-decoration: none;
+  color: #0C1C2C;
+}
+
 #show-image img {
     border-radius: 50px;
     border: solid;
@@ -52,7 +61,7 @@ table img {
 /* DROPDOWN TEST */
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #325064;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -89,5 +98,5 @@ table img {
   }
   
   .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: #325064;
   }

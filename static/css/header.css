@@ -38,6 +38,12 @@
     color: #0C1C2C;;
 }
 
+/* active not working */
+/* .main-nav a:active {
+    background: #EDF0F1;
+    color: #0C1C2C;;
+} */
+
 #bucket-list-link {
     font-weight: bold;
     background: #D79033;
