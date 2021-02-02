@@ -9,7 +9,16 @@
   <button class="dropbtn">Zones</button>
   <div class="dropdown-content" style="left:0;">
     {% for zone in all_zones %}
-    <a href="/places/filtered/{{zone.id}}"> {{zone.name}}</a>
+    <a href="/places/filtered_1/{{zone.id}}"> {{zone.name}}</a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="dropdown" style="float: left;">
+  <button class="dropbtn">Categories</button>
+  <div class="dropdown-content" style="left:0;">
+    {% for category in all_categories %}
+    <a href="/places/filtered_2/{{category.id}}"> {{category.name}}</a>
     {% endfor %}
   </div>
 </div>
@@ -17,8 +26,8 @@
 <div class="dropdown" style="float: left;">
   <button class="dropbtn">Ticked Off</button>
   <div class="dropdown-content" style="left:0;">
-    <!-- <a href="#">Not yet</a> -->
-    <!-- <a href="#">Yes</a>  -->
+    <a href="#">Not yet</a>
+    <a href="#">Yes</a> 
   </div>
 </div>
 

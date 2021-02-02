@@ -12,8 +12,9 @@ locations_blueprint = Blueprint("locations", __name__)
 @locations_blueprint.route("/places")
 def locations():
     zones = zone_repository.select_all()
+    categories = category_repository.select_all()
     locations = location_repository.select_all()
-    return render_template('locations/index.html', all_locations = locations, all_zones = zones)
+    return render_template('locations/index.html', all_locations = locations, all_zones = zones, all_categories = categories)
 
 # Show a specific place
 @locations_blueprint.route("/places/<id>", methods=['GET'])
@@ -74,15 +75,22 @@ def delete_location(id):
     return redirect('/places')
 
 # Show a list of filtered places by zone
-@locations_blueprint.route("/places/filtered/<zone_id>", methods=['GET'])
+@locations_blueprint.route("/places/filtered_1/<zone_id>", methods=['GET'])
 def show_filtered_locations_by_zone(zone_id):
     zone = zone_repository.select(zone_id)
     locations = location_repository.select_by_zone(zone)
     return render_template('locations/filtered_zone.html', filtered_locations = locations, zone = zone)
 
+# Show a list of filtered places by category
+@locations_blueprint.route("/places/filtered_2/<category_id>", methods=['GET'])
+def show_filtered_locations_by_category(category_id):
+    category = category_repository.select(category_id)
+    locations = location_repository.select_by_category(category)
+    return render_template('locations/filtered_category.html', filtered_locations = locations, category = category)
+
 # Show a list of filtered places by status (visited True/False)
-@locations_blueprint.route("/places/filtered/<visited>", methods=['GET'])
-def show_filtered_locations_by_status(visited):
-    zones = zone_repository.select_all()
-    locations = location_repository.select_by_status(visited)
-    return render_template('locations/filtered_status.html', filtered_locations = locations, all_zones = zones)
+# @locations_blueprint.route("/places/filtered/<visited>", methods=['GET'])
+# def show_filtered_locations_by_status(visited):
+#     zones = zone_repository.select_all()
+#     locations = location_repository.select_by_status(visited)
+#     return render_template('locations/filtered_status.html', filtered_locations = locations, all_zones = zones)

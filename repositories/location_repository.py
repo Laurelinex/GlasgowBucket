@@ -67,10 +67,10 @@ def select_by_zone(zone):
         locations.append(location)
     return locations
 
-def select_by_status(visited):
+def select_by_category(category):
     locations = []
-    sql = "SELECT * FROM locations WHERE visited = %s"
-    values = [visited]
+    sql = "SELECT * FROM locations WHERE category_id = %s"
+    values = [category.id]
     results = run_sql(sql, values)
 
     for row in results:
@@ -79,3 +79,16 @@ def select_by_status(visited):
         location = Location(row['name'], row['description'], zone, category, row['picture'], row['visited'], row['id'])
         locations.append(location)
     return locations
+
+# def select_by_status(visited):
+#     locations = []
+#     sql = "SELECT * FROM locations WHERE visited = %s"
+#     values = [visited]
+#     results = run_sql(sql, values)
+
+#     for row in results:
+#         zone = zone_repository.select(row['zone_id'])
+#         category = category_repository.select(row['category_id'])
+#         location = Location(row['name'], row['description'], zone, category, row['picture'], row['visited'], row['id'])
+#         locations.append(location)
+#     return locations
