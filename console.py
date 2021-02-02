@@ -9,6 +9,7 @@ import repositories.category_repository as category_repository
 
 location_repository.delete_all()
 zone_repository.delete_all()
+category_repository.delete_all()
 
 zone_1 = Zone("City Centre", "The stunning Victorian architecture and grid system of streets make Glasgow’s bustling city centre a distinctive, culture-rich neighbourhood, with George Square – the city’s principal square – its civic heart.", "https://www.fineholm.co.uk/wp-content/uploads/2016/04/property-for-rent-in-glasgow2.jpg")
 zone_repository.save(zone_1)
@@ -58,5 +59,8 @@ category_3 = Category("Sights & Landmarks")
 category_repository.save(category_3)
 category_4 = Category("Nature & Parks")
 category_repository.save(category_4)
+
+category_4.name = "Butts"
+category_repository.update(category_4)
 
 pdb.set_trace()
