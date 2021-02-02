@@ -92,3 +92,29 @@ def select_by_visited(visited):
         location = Location(row['name'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
         locations.append(location)
     return locations
+
+def select_by_lockdown_friendliness(lockdown_friendly):
+    locations = []
+    sql = "SELECT * FROM locations WHERE lockdown_friendly = %s"
+    values = [lockdown_friendly]
+    results = run_sql(sql, values)
+
+    for row in results:
+        zone = zone_repository.select(row['zone_id'])
+        category = category_repository.select(row['category_id'])
+        location = Location(row['name'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
+        locations.append(location)
+    return locations
+
+def select_by_free_entry(free):
+    locations = []
+    sql = "SELECT * FROM locations WHERE free = %s"
+    values = [free]
+    results = run_sql(sql, values)
+
+    for row in results:
+        zone = zone_repository.select(row['zone_id'])
+        category = category_repository.select(row['category_id'])
+        location = Location(row['name'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
+        locations.append(location)
+    return locations

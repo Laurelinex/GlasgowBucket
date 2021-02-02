@@ -97,3 +97,15 @@ def show_filtered_locations_by_category(category_id):
 def show_filtered_locations_by_status(visited):
     locations = location_repository.select_by_visited(visited)
     return render_template('locations/filtered_status.html', filtered_locations = locations)
+
+# Show a list of filtered places by lockdown friendliness (lockdown friendly True/False)
+@locations_blueprint.route("/places/filtered_4/<lockdown_friendly>", methods=['GET'])
+def show_filtered_locations_by_lockdown_friendliness(lockdown_friendly):
+    locations = location_repository.select_by_lockdown_friendliness(lockdown_friendly)
+    return render_template('locations/filtered_lockdown.html', filtered_locations = locations)
+
+# Show a list of filtered places by entry fee (free True/False)
+@locations_blueprint.route("/places/filtered_5/<free>", methods=['GET'])
+def show_filtered_locations_by_free_entry(free):
+    locations = location_repository.select_by_free_entry(free)
+    return render_template('locations/filtered_free.html', filtered_locations = locations)
