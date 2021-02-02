@@ -43,6 +43,20 @@
     <td class="name-cell"><a href="/places/{{location.id}}"> {{location.name}} </a></td>
     <td rowspan="2" class="category-cell">{{location.category.name}}</td>
     <td rowspan="2">{{location.description}}</td>
+    <td rowspan="2" class="lf-cell">
+      {% if location.lockdown_friendly == True %}
+        <p>Lockdown friendly!</p>
+      {% else %}
+        <p>Closed</p>
+      {% endif %}
+    </td>
+    <td rowspan="2" class="free-cell">
+      {% if location.free == True %}
+        <p>FREE</p>
+      {% else %}
+        <p>£</p>
+      {% endif %}
+    </td>
     <td rowspan="2" class="zone-cell">{{location.zone.name}}</td>
     <td rowspan="2" class="tick-cell">
       {% if location.visited == True %}

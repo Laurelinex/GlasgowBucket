@@ -5,12 +5,21 @@
     <p>{{location.name}}</p>
     <hr>
     <p>{{location.description}}</p>
-    <p>{{location.zone.name}}</p>
     {% if location.visited == True %}
       <p style="color: green">You've been! √</p>
     {% else %}
     {% endif %}
-    </p>
+      </p>
+    {% if location.lockdown_friendly == True %}
+      <p>This is located in the {{location.zone.name}} and you can visit during lockdown!</p>
+    {% else %}
+      <p>This is located in the {{location.zone.name}} but is temporarily closed.</p>
+    {% endif %}
+
+      {% if location.free == True %}
+        <p>It's FREE!</p>
+      {% endif %}
+      <!-- No else statement because of Food & Drinks places -->
 
     <!-- to style and align -->
     <div>

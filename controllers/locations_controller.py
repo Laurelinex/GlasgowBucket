@@ -38,10 +38,12 @@ def create_location():
     zone_id = request.form['zone_id']
     category_id = request.form['category_id']
     picture = request.form['picture']
+    lockdown_friendly = request.form['lockdown_friendly']
+    free = request.form['free']
     visited = request.form['visited']
     zone = zone_repository.select(zone_id)
     category = category_repository.select(category_id)
-    location = Location(name, description, zone, category, picture, visited)
+    location = Location(name, description, zone, category, picture, lockdown_friendly, free, visited)
     location_repository.save(location)
     return redirect('/places')
 
@@ -61,10 +63,12 @@ def update_location(id):
     zone = request.form['zone_id']
     category = request.form['category_id']
     picture = request.form['picture']
+    lockdown_friendly = request.form['lockdown_friendly']
+    free = request.form['free']
     visited = request.form['visited']
     zone = zone_repository.select(request.form['zone_id'])
     category = category_repository.select(request.form['category_id'])
-    location = Location(name, description, zone, category, picture, visited, id)
+    location = Location(name, description, zone, category, picture, lockdown_friendly, free, visited, id)
     location_repository.update(location)
     return redirect('/places')
 
