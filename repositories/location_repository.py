@@ -7,8 +7,8 @@ import repositories.zone_repository as zone_repository
 import repositories.category_repository as category_repository
 
 def save(location):
-    sql = "INSERT INTO locations (name, description, zone_id, category_id, picture, lockdown_friendly, free, visited) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [location.name, location.description, location.zone.id, location.category.id, location.picture, location.lockdown_friendly, location.free, location.visited]
+    sql = "INSERT INTO locations (name, address, description, zone_id, category_id, picture, lockdown_friendly, free, visited) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [location.name, location.address, location.description, location.zone.id, location.category.id, location.picture, location.lockdown_friendly, location.free, location.visited]
     results = run_sql(sql, values)
     id = results[0]['id']
     location.id = id
@@ -32,7 +32,7 @@ def select_all():
     for row in results:
         zone = zone_repository.select(row['zone_id'])
         category = category_repository.select(row['category_id'])
-        location = Location(row['name'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
+        location = Location(row['name'], row['address'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
         locations.append(location)
     return locations
 
@@ -45,12 +45,12 @@ def select(id):
     if result is not None:
         zone = zone_repository.select(result['zone_id'])
         category = category_repository.select(result['category_id'])
-        location = Location(result['name'], result['description'], zone, category, result['picture'], result['lockdown_friendly'], result['free'], result['visited'], result['id'])
+        location = Location(result['name'], result['address'], result['description'], zone, category, result['picture'], result['lockdown_friendly'], result['free'], result['visited'], result['id'])
     return location
 
 def update(location):
-    sql = "UPDATE locations SET (name, description, zone_id, category_id, picture, lockdown_friendly, free, visited) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [location.name, location.description, location.zone.id, location.category.id, location.picture, location.lockdown_friendly, location.free, location.visited, location.id]
+    sql = "UPDATE locations SET (name, address, description, zone_id, category_id, picture, lockdown_friendly, free, visited) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [location.name, location.address, location.description, location.zone.id, location.category.id, location.picture, location.lockdown_friendly, location.free, location.visited, location.id]
     print(values)
     run_sql(sql, values)
 
@@ -63,7 +63,7 @@ def select_by_zone(zone):
     for row in results:
         zone = zone_repository.select(row['zone_id'])
         category = category_repository.select(row['category_id'])
-        location = Location(row['name'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
+        location = Location(row['name'], row['address'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
         locations.append(location)
     return locations
 
@@ -76,7 +76,7 @@ def select_by_category(category):
     for row in results:
         zone = zone_repository.select(row['zone_id'])
         category = category_repository.select(row['category_id'])
-        location = Location(row['name'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
+        location = Location(row['name'], row['address'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
         locations.append(location)
     return locations
 
@@ -89,7 +89,7 @@ def select_by_visited(visited):
     for row in results:
         zone = zone_repository.select(row['zone_id'])
         category = category_repository.select(row['category_id'])
-        location = Location(row['name'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
+        location = Location(row['name'], row['address'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
         locations.append(location)
     return locations
 
@@ -102,7 +102,7 @@ def select_by_lockdown_friendliness(lockdown_friendly):
     for row in results:
         zone = zone_repository.select(row['zone_id'])
         category = category_repository.select(row['category_id'])
-        location = Location(row['name'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
+        location = Location(row['name'], row['address'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
         locations.append(location)
     return locations
 
@@ -115,6 +115,6 @@ def select_by_free_entry(free):
     for row in results:
         zone = zone_repository.select(row['zone_id'])
         category = category_repository.select(row['category_id'])
-        location = Location(row['name'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
+        location = Location(row['name'], row['address'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
         locations.append(location)
     return locations

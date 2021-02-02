@@ -34,6 +34,7 @@ def new_location():
 @locations_blueprint.route("/places", methods=['POST'])
 def create_location():
     name = request.form['name']
+    address = request.form['address']
     description = request.form['description']
     zone_id = request.form['zone_id']
     category_id = request.form['category_id']
@@ -43,7 +44,7 @@ def create_location():
     visited = request.form['visited']
     zone = zone_repository.select(zone_id)
     category = category_repository.select(category_id)
-    location = Location(name, description, zone, category, picture, lockdown_friendly, free, visited)
+    location = Location(name, address, description, zone, category, picture, lockdown_friendly, free, visited)
     location_repository.save(location)
     return redirect('/places')
 
@@ -59,6 +60,7 @@ def edit_location(id):
 @locations_blueprint.route("/places/<id>", methods=['POST'])
 def update_location(id):
     name = request.form['name']
+    address = request.form['address']
     description = request.form['description']
     zone = request.form['zone_id']
     category = request.form['category_id']
@@ -68,7 +70,7 @@ def update_location(id):
     visited = request.form['visited']
     zone = zone_repository.select(request.form['zone_id'])
     category = category_repository.select(request.form['category_id'])
-    location = Location(name, description, zone, category, picture, lockdown_friendly, free, visited, id)
+    location = Location(name, address, description, zone, category, picture, lockdown_friendly, free, visited, id)
     location_repository.update(location)
     return redirect('/places')
 

@@ -21,7 +21,8 @@
       {% endif %}
       <!-- No else statement because of Food & Drinks places -->
 
-    <!-- to style and align -->
+      <p style="font-style: italic;">{{location.address}}</p>
+
     <div class="edit-delete-buttons">
       <a href="/places/{{location.id}}/edit"><i class="fas fa-pencil-alt" style="color: chocolate; font-size: 1.7em;"></i></a>
       <form class="delete-form" action="/places/{{location.id}}/delete" method="POST">

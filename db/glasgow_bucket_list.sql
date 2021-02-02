@@ -18,6 +18,7 @@ CREATE TABLE categories (
 CREATE TABLE locations (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
+    address VARCHAR(255),
     description TEXT,
     picture TEXT,
     -- picture URL = text
