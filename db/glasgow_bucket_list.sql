@@ -21,6 +21,8 @@ CREATE TABLE locations (
     description TEXT,
     picture TEXT,
     -- picture URL = text
+    lockdown_friendly BOOLEAN,
+    free BOOLEAN,
     visited BOOLEAN,
     zone_id INT REFERENCES zones(id) ON DELETE CASCADE,
     category_id INT REFERENCES categories(id) ON DELETE CASCADE

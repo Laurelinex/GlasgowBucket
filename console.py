@@ -8,8 +8,8 @@ import repositories.zone_repository as zone_repository
 import repositories.category_repository as category_repository
 
 location_repository.delete_all()
-zone_repository.delete_all()
 category_repository.delete_all()
+zone_repository.delete_all()
 
 zone_1 = Zone("City Centre", "The stunning Victorian architecture and grid system of streets make Glasgow’s bustling city centre a distinctive, culture-rich neighbourhood, with George Square – the city’s principal square – its civic heart.", "https://www.fineholm.co.uk/wp-content/uploads/2016/04/property-for-rent-in-glasgow2.jpg")
 zone_repository.save(zone_1)
@@ -43,7 +43,7 @@ category_9 = Category("Other")
 category_repository.save(category_9)
 
 # City Centre
-location_1 = Location("Duke of Wellington Statue", "This beconed statue has become a symbol of Glasgow's quirky sense of humour.", zone_1, category_8, "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F9637735a-8f9e-11e9-93de-1ab642214bd5.jpg?crop=2667%2C1500%2C0%2C0&resize=1180", True)
+location_1 = Location("Duke of Wellington Statue", "This beconed statue has become a symbol of Glasgow's quirky sense of humour.", zone_1, category_8, "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F9637735a-8f9e-11e9-93de-1ab642214bd5.jpg?crop=2667%2C1500%2C0%2C0&resize=1180")
 location_repository.save(location_1)
 location_2 = Location("The Lighthouse", "Landmark exhibition space dedicated to architecture, design and the city.", zone_1, category_2, "https://assets.atlasobscura.com/media/W1siZiIsInVwbG9hZHMvcGxhY2VfaW1hZ2VzLzNmYzFkZjE1LTFkMDMtNGQzOC05ODlmLTc3YWIwMDE5MjM5YjkwOGFhNzliMmRhYjM2NzIwOF9MaWdodGhvdXNlX2dsYXNnb3dfc3BpcmFsX3N0YWlyY2FzZS5qcGciXSxbInAiLCJjb252ZXJ0IiwiIl0sWyJwIiwiY29udmVydCIsIi1xdWFsaXR5IDgxIC1hdXRvLW9yaWVudCJdLFsicCIsInRodW1iIiwiNzgweDUyMCMiXV0/Lighthouse_glasgow_spiral_staircase.jpg")
 location_repository.save(location_2)
