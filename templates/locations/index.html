@@ -61,14 +61,14 @@
     <td rowspan="2" style="font-style: italic;">{{location.description}}</td>
     <td rowspan="2" class="lf-cell">
       {% if location.lockdown_friendly == True %}
-        <p>Lockdown friendly!</p>
+        <p style="color: rgb(18, 160, 13)">Lockdown friendly!</p>
       {% else %}
-        <p>Temporarily closed</p>
+        <p style="color: #D79033">Temporarily closed</p>
       {% endif %}
     </td>
     <td rowspan="2" class="free-cell">
       {% if location.free == True %}
-      <i class="fas fa-pound-sign" style="color: rgb(18, 160, 13)"></i>
+      <p style="color: rgb(18, 160, 13)">FREE</p>
       {% else %}
       <i class="fas fa-pound-sign" style="color: #D79033"></i>
       {% endif %}

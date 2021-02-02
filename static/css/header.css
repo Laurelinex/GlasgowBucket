@@ -36,6 +36,7 @@
 .main-nav a:hover {
     background:#0C1C2C;
     color: #EDF0F1;
+    border: 2px solid #EDF0F1;
 }
 
 /* active not working */
@@ -49,4 +50,11 @@
     background: #D79033;
     color: #EDF0F1;
     border: 2px solid #EDF0F1;
+}
+
+#bucket-list-link:hover {
+    font-weight: bold;
+    background: #EDF0F1;
+    color: #D79033;
+    border: 2px solid #D79033;
 }
