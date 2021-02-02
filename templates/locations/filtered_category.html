@@ -7,37 +7,37 @@
     <tr>
       <td class="name-cell"><a href="/places/{{category.id}}"> {{location.name}} </a></td>
       <td rowspan="2" class="category-cell">{{location.category.name}}</td>
-      <td rowspan="2">{{location.description}}</td>
+      <td rowspan="2" style="font-style: italic;">{{location.description}}</td>
       <td rowspan="2" class="lf-cell">
-        {% if location.lockdown_friendly == True %}
-          <p>Lockdown friendly!</p>
-        {% else %}
-          <p>Closed</p>
-        {% endif %}
-      </td>
-      <td rowspan="2" class="free-cell">
-        {% if location.free == True %}
-          <p>FREE</p>
-        {% else %}
-          <p>£</p>
-        {% endif %}
-      </td>
-      <td rowspan="2" class="zone-cell">{{location.zone.name}}</td>
-      <td rowspan="2" class="tick-cell">
-        {% if location.visited == True %}
-          <i class="fas fa-check-circle" style="color: rgb(18, 160, 13);"></i>
-        {% else %}
-          <i class="far fa-circle" style="color: #D79033;"></i>
-        {% endif %}
-      </td>
-    </tr>
-    <tr>
-      <td class="image-cell">
-        {% if location.picture | length != 0 %}
-        <img src="{{location.picture}}" alt="picture of {{location.name}}">
-        {% endif %}
-      </td>
-    </tr>
+          {% if location.lockdown_friendly == True %}
+            <p>Lockdown friendly!</p>
+          {% else %}
+            <p>Temporarily closed</p>
+          {% endif %}
+        </td>
+        <td rowspan="2" class="free-cell">
+          {% if location.free == True %}
+          <i class="fas fa-pound-sign" style="color: rgb(18, 160, 13)"></i>
+          {% else %}
+          <i class="fas fa-pound-sign" style="color: #D79033"></i>
+          {% endif %}
+        </td>
+        <td rowspan="2" class="zone-cell" style="font-weight: bold;">{{location.zone.name}}</td>
+        <td rowspan="2" class="tick-cell">
+          {% if location.visited == True %}
+            <i class="fas fa-check-circle" style="color: rgb(18, 160, 13); font-size: 2em;"></i>
+          {% else %}
+            <i class="far fa-circle" style="color: #D79033; font-size: 2em;"></i>
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td class="image-cell">
+          {% if location.picture | length != 0 %}
+          <img src="{{location.picture}}" alt="picture of {{location.name}}">
+          {% endif %}
+        </td>
+      </tr>
     {% endfor %}
 </table>
 
