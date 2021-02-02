@@ -4,6 +4,7 @@ from models.location import Location
 
 import repositories.location_repository as location_repository
 import repositories.zone_repository as zone_repository
+import repositories.category_repository as category_repository
 
 locations_blueprint = Blueprint("locations", __name__)
 
@@ -24,8 +25,9 @@ def show_location(id):
 @locations_blueprint.route("/places/new")
 def new_location():
     zones = zone_repository.select_all()
+    categories = category_repository.select_all()
     locations = location_repository.select_all()
-    return render_template('locations/new.html', all_zones = zones, all_locations = locations)
+    return render_template('locations/new.html', all_zones = zones, all_categories = categories, all_locations = locations)
 
 # Create new place
 @locations_blueprint.route("/places", methods=['POST'])
@@ -33,10 +35,12 @@ def create_location():
     name = request.form['name']
     description = request.form['description']
     zone_id = request.form['zone_id']
+    category_id = request.form['category_id']
     picture = request.form['picture']
     visited = request.form['visited']
     zone = zone_repository.select(zone_id)
-    location = Location(name, description, zone, picture, visited)
+    category = category_repository.select(category_id)
+    location = Location(name, description, zone, category, picture, visited)
     location_repository.save(location)
     return redirect('/places')
 
@@ -45,7 +49,8 @@ def create_location():
 def edit_location(id):
     location = location_repository.select(id)
     zones = zone_repository.select_all()
-    return render_template('locations/edit.html', location = location, all_zones = zones)
+    categories = category_repository.select_all()
+    return render_template('locations/edit.html', location = location, all_zones = zones, all_categories = categories)
 
 # Update place info
 @locations_blueprint.route("/places/<id>", methods=['POST'])
@@ -53,10 +58,12 @@ def update_location(id):
     name = request.form['name']
     description = request.form['description']
     zone = request.form['zone_id']
+    category = request.form['category_id']
     picture = request.form['picture']
     visited = request.form['visited']
     zone = zone_repository.select(request.form['zone_id'])
-    location = Location(name, description, zone, picture, visited, id)
+    category = category_repository.select(request.form['category_id'])
+    location = Location(name, description, zone, category, picture, visited, id)
     location_repository.update(location)
     return redirect('/places')
 

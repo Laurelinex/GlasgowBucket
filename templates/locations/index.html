@@ -32,6 +32,7 @@
   {% for location in all_locations %}
   <tr>
     <td class="name-cell"><a href="/places/{{location.id}}"> {{location.name}} </a></td>
+    <td rowspan="2" class="category-cell">{{location.category.name}}</td>
     <td rowspan="2">{{location.description}}</td>
     <td rowspan="2" class="zone-cell">{{location.zone.name}}</td>
     <td rowspan="2" class="tick-cell">

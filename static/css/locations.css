@@ -20,7 +20,7 @@ table {
     width: 95%;
 }
 
-.name-cell, .zone-cell {
+.name-cell, .zone-cell, .category-cell {
     text-align: center;
 }
 

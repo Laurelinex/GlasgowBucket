@@ -49,7 +49,7 @@ def select(id):
     return location
 
 def update(location):
-    sql = "UPDATE locations SET (name, description, zone_id, location_id, picture, visited) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    sql = "UPDATE locations SET (name, description, zone_id, category_id, picture, visited) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [location.name, location.description, location.zone.id, location.category.id, location.picture, location.visited, location.id]
     print(values)
     run_sql(sql, values)
