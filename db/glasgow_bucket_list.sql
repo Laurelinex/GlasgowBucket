@@ -22,5 +22,6 @@ CREATE TABLE locations (
     picture TEXT,
     -- picture URL = text
     visited BOOLEAN,
-    zone_id INT REFERENCES zones(id) ON DELETE CASCADE
+    zone_id INT REFERENCES zones(id) ON DELETE CASCADE,
+    category_id INT REFERENCES categories(id) ON DELETE CASCADE
 );

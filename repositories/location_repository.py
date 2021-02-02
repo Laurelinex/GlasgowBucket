@@ -4,10 +4,11 @@ from models.zone import Zone
 from models.location import Location
 
 import repositories.zone_repository as zone_repository
+import repositories.category_repository as category_repository
 
 def save(location):
-    sql = "INSERT INTO locations (name, description, zone_id, picture, visited) VALUES (%s, %s, %s, %s, %s) RETURNING *"
-    values = [location.name, location.description, location.zone.id, location.picture, location.visited]
+    sql = "INSERT INTO locations (name, description, zone_id, category_id, picture, visited) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [location.name, location.description, location.zone.id, location.category.id, location.picture, location.visited]
     results = run_sql(sql, values)
     id = results[0]['id']
     location.id = id
@@ -30,7 +31,8 @@ def select_all():
 
     for row in results:
         zone = zone_repository.select(row['zone_id'])
-        location = Location(row['name'], row['description'], zone, row['picture'], row['visited'], row['id'])
+        category = category_repository.select(row['category_id'])
+        location = Location(row['name'], row['description'], zone, category, row['picture'], row['visited'], row['id'])
         locations.append(location)
     return locations
 
@@ -42,12 +44,13 @@ def select(id):
 
     if result is not None:
         zone = zone_repository.select(result['zone_id'])
-        location = Location(result['name'], result['description'], zone, result['picture'], result['visited'], result['id'])
+        category = category_repository.select(result['category_id'])
+        location = Location(result['name'], result['description'], zone, category, result['picture'], result['visited'], result['id'])
     return location
 
 def update(location):
-    sql = "UPDATE locations SET (name, description, zone_id, picture, visited) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [location.name, location.description, location.zone.id, location.picture, location.visited, location.id]
+    sql = "UPDATE locations SET (name, description, zone_id, location_id, picture, visited) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [location.name, location.description, location.zone.id, location.category.id, location.picture, location.visited, location.id]
     print(values)
     run_sql(sql, values)
 
@@ -59,7 +62,8 @@ def select_by_zone(zone):
 
     for row in results:
         zone = zone_repository.select(row['zone_id'])
-        location = Location(row['name'], row['description'], zone, row['picture'], row['visited'], row['id'])
+        category = category_repository.select(row['category_id'])
+        location = Location(row['name'], row['description'], zone, category, row['picture'], row['visited'], row['id'])
         locations.append(location)
     return locations
 
@@ -71,6 +75,7 @@ def select_by_status(visited):
 
     for row in results:
         zone = zone_repository.select(row['zone_id'])
-        location = Location(row['name'], row['description'], zone, row['picture'], row['visited'], row['id'])
+        category = category_repository.select(row['category_id'])
+        location = Location(row['name'], row['description'], zone, category, row['picture'], row['visited'], row['id'])
         locations.append(location)
     return locations
