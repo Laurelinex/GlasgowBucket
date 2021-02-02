@@ -80,15 +80,15 @@ def select_by_category(category):
         locations.append(location)
     return locations
 
-# def select_by_status(visited):
-#     locations = []
-#     sql = "SELECT * FROM locations WHERE visited = %s"
-#     values = [visited]
-#     results = run_sql(sql, values)
+def select_by_visited(visited):
+    locations = []
+    sql = "SELECT * FROM locations WHERE visited = %s"
+    values = [visited]
+    results = run_sql(sql, values)
 
-#     for row in results:
-#         zone = zone_repository.select(row['zone_id'])
-#         category = category_repository.select(row['category_id'])
-#         location = Location(row['name'], row['description'], zone, category, row['picture'], row['visited'], row['id'])
-#         locations.append(location)
-#     return locations
+    for row in results:
+        zone = zone_repository.select(row['zone_id'])
+        category = category_repository.select(row['category_id'])
+        location = Location(row['name'], row['description'], zone, category, row['picture'], row['visited'], row['id'])
+        locations.append(location)
+    return locations

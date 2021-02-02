@@ -89,8 +89,7 @@ def show_filtered_locations_by_category(category_id):
     return render_template('locations/filtered_category.html', filtered_locations = locations, category = category)
 
 # Show a list of filtered places by status (visited True/False)
-# @locations_blueprint.route("/places/filtered/<visited>", methods=['GET'])
-# def show_filtered_locations_by_status(visited):
-#     zones = zone_repository.select_all()
-#     locations = location_repository.select_by_status(visited)
-#     return render_template('locations/filtered_status.html', filtered_locations = locations, all_zones = zones)
+@locations_blueprint.route("/places/filtered_3/<visited>", methods=['GET'])
+def show_filtered_locations_by_status(visited):
+    locations = location_repository.select_by_visited(visited)
+    return render_template('locations/filtered_status.html', filtered_locations = locations)
