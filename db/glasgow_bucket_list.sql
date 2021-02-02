@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS locations;
 DROP TABLE IF EXISTS zones;
+DROP TABLE IF EXISTS categories;
 
 
 CREATE TABLE zones (
@@ -7,6 +8,11 @@ CREATE TABLE zones (
     name VARCHAR(255),
     description TEXT,
     picture TEXT
+);
+
+CREATE TABLE categories (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255)
 );
 
 CREATE TABLE locations (

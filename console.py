@@ -1,9 +1,11 @@
 import pdb
 from models.location import Location
 from models.zone import Zone
+from models.category import Category
 
 import repositories.location_repository as location_repository
 import repositories.zone_repository as zone_repository
+import repositories.category_repository as category_repository
 
 location_repository.delete_all()
 zone_repository.delete_all()
@@ -46,5 +48,15 @@ location_8 = Location("The Botanic Gardens", "Created in 1817, Glasgow Botanic G
 location_repository.save(location_8)
 location_9 = Location("Kelvingrove Art Gallery & Museum", "The most popular attraction in Glasgow. Features vast natural history and art collections.", zone_5, "https://i.pinimg.com/originals/1a/2e/6b/1a2e6bfa5836a827d8332cedef5d4e99.jpg")
 location_repository.save(location_9)
+
+# Location Categories
+category_1 = Category("Food & Drink")
+category_repository.save(category_1)
+category_2 = Category("Museums")
+category_repository.save(category_2)
+category_3 = Category("Sights & Landmarks")
+category_repository.save(category_3)
+category_4 = Category("Nature & Parks")
+category_repository.save(category_4)
 
 pdb.set_trace()
