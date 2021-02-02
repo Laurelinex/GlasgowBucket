@@ -24,18 +24,18 @@
 
 .main-nav a {
     display: block;
-    background: #0C1C2C;
-    color: #EDF0F1;
+    background: #EDF0F1;
+    color: #0C1C2C;
     text-decoration: none;
     padding: 10px;
     margin: 5px;
     border-radius: 50px;
-    border: 1px solid #EDF0F1;
+    border: 2px solid #0C1C2C;
 }
 
 .main-nav a:hover {
-    background: #EDF0F1;
-    color: #0C1C2C;;
+    background:#0C1C2C;
+    color: #EDF0F1;
 }
 
 /* active not working */

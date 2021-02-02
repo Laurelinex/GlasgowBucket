@@ -2,7 +2,7 @@
 {% block content %}
 
   <div id="show-image">
-    <p>{{location.name}}</p>
+    <h3 style="font-weight: bold;">{{location.name}}</h3>
     <hr>
     <p>{{location.description}}</p>
     {% if location.visited == True %}
@@ -11,26 +11,26 @@
     {% endif %}
       </p>
     {% if location.lockdown_friendly == True %}
-      <p>This is located in the {{location.zone.name}} and you can visit during lockdown!</p>
+      <p style="font-style: italic;">This is located in the {{location.zone.name}} and you can visit during lockdown!</p>
     {% else %}
-      <p>This is located in the {{location.zone.name}} but is temporarily closed.</p>
+      <p style="font-style: italic;">This is located in the {{location.zone.name}} but is temporarily closed.</p>
     {% endif %}
 
       {% if location.free == True %}
-        <p>It's FREE!</p>
+        <p style="font-style: italic;">It's FREE!</p>
       {% endif %}
       <!-- No else statement because of Food & Drinks places -->
 
     <!-- to style and align -->
-    <div>
-      <p><a href="/places/{{location.id}}/edit"><i class="fas fa-pencil-alt"></i></a></p>
+    <div class="edit-delete-buttons">
+      <a href="/places/{{location.id}}/edit"><i class="fas fa-pencil-alt" style="color: chocolate; font-size: 1.7em;"></i></a>
       <form class="delete-form" action="/places/{{location.id}}/delete" method="POST">
-        <button><i class="far fa-trash-alt"></i></button>
+        <button class="delete-button"><i class="far fa-trash-alt" style="color: rgb(173, 12, 44); font-size: 2em;"></i></button>
       </form>
     </div>
     
     {% if location.picture | length != 0 %}
-      <img src="{{location.picture}}" alt="Picture of {{location.name}}">
+      <div class="show-image-img"><img src="{{location.picture}}" alt="Picture of {{location.name}}"></div>>
     {% endif %}
   </div>
 

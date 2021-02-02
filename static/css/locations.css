@@ -17,10 +17,10 @@
 
 table {
     border-spacing: 20px;
-    width: 95%;
+    width: 100%;
 }
 
-.name-cell, .zone-cell, .category-cell {
+.name-cell, .zone-cell, .category-cell, .free-cell, .lf-cell {
     text-align: center;
 }
 
@@ -29,8 +29,7 @@ table {
 }
 
 .tick-cell {
-    text-align: center;
-    width: 3%;
+    text-align: right;
 }
 
 .image-cell {
@@ -54,11 +53,13 @@ table a {
 
 #show-image img {
     border-radius: 50px;
-    border: solid;
-    border-color: #0C1C2C;
 }
 
-/* DROPDOWN TEST */
+.show-image-img {
+  text-align: center;
+}
+
+/* DROPDOWN FILTER MENU */
 
 .dropbtn {
     background-color: #325064;
@@ -99,4 +100,23 @@ table a {
   
   .dropdown:hover .dropbtn {
     background-color: #325064;
+  }
+
+/* SHOW PAGE BUTTONS */
+
+  .edit-delete-buttons {
+    display: flex;
+  }
+
+  .edit-delete-buttons i {
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+
+  .delete-button {
+    display: contents;
+  }
+
+  .delete-form{
+    display: inline;
   }
