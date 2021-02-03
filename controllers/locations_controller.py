@@ -81,33 +81,33 @@ def delete_location(id):
     return redirect('/places')
 
 # Show a list of filtered places by zone
-@locations_blueprint.route("/places/filtered_1/<zone_id>", methods=['GET'])
+@locations_blueprint.route("/places/filter_zone/<zone_id>", methods=['GET'])
 def show_filtered_locations_by_zone(zone_id):
     zone = zone_repository.select(zone_id)
     locations = location_repository.select_by_zone(zone)
     return render_template('locations/filtered_zone.html', filtered_locations = locations, zone = zone)
 
 # Show a list of filtered places by category
-@locations_blueprint.route("/places/filtered_2/<category_id>", methods=['GET'])
+@locations_blueprint.route("/places/filter_category/<category_id>", methods=['GET'])
 def show_filtered_locations_by_category(category_id):
     category = category_repository.select(category_id)
     locations = location_repository.select_by_category(category)
     return render_template('locations/filtered_category.html', filtered_locations = locations, category = category)
 
 # Show a list of filtered places by status (visited True/False)
-@locations_blueprint.route("/places/filtered_3/<visited>", methods=['GET'])
+@locations_blueprint.route("/places/filter_visited/<visited>", methods=['GET'])
 def show_filtered_locations_by_status(visited):
     locations = location_repository.select_by_visited(visited)
     return render_template('locations/filtered_status.html', filtered_locations = locations)
 
 # Show a list of filtered places by lockdown friendliness (lockdown friendly True/False)
-@locations_blueprint.route("/places/filtered_4/<lockdown_friendly>", methods=['GET'])
+@locations_blueprint.route("/places/filter_lockdown/<lockdown_friendly>", methods=['GET'])
 def show_filtered_locations_by_lockdown_friendliness(lockdown_friendly):
     locations = location_repository.select_by_lockdown_friendliness(lockdown_friendly)
     return render_template('locations/filtered_lockdown.html', filtered_locations = locations)
 
 # Show a list of filtered places by entry fee (free True/False)
-@locations_blueprint.route("/places/filtered_5/<free>", methods=['GET'])
+@locations_blueprint.route("/places/filter_free/<free>", methods=['GET'])
 def show_filtered_locations_by_free_entry(free):
     locations = location_repository.select_by_free_entry(free)
     return render_template('locations/filtered_free.html', filtered_locations = locations)

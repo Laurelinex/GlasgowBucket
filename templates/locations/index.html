@@ -9,7 +9,7 @@
   <button class="dropbtn">Zones</button>
   <div class="dropdown-content" style="left:0;">
     {% for zone in all_zones %}
-    <a href="/places/filtered_1/{{zone.id}}"> {{zone.name}}</a>
+    <a href="/places/filter_zone/{{zone.id}}"> {{zone.name}}</a>
     {% endfor %}
   </div>
 </div>
@@ -18,7 +18,7 @@
   <button class="dropbtn">Categories</button>
   <div class="dropdown-content" style="left:0;">
     {% for category in all_categories %}
-    <a href="/places/filtered_2/{{category.id}}"> {{category.name}}</a>
+    <a href="/places/filter_category/{{category.id}}"> {{category.name}}</a>
     {% endfor %}
   </div>
 </div>
@@ -26,24 +26,24 @@
 <div class="dropdown" style="float: left;">
   <button class="dropbtn">Status</button>
   <div class="dropdown-content" style="left:0;">
-    <a href="/places/filtered_3/False">Not yet been</a>
-    <a href="/places/filtered_3/True">Visited</a>
+    <a href="/places/filter_visited/False">Not yet been</a>
+    <a href="/places/filter_visited/True">Visited</a>
   </div>
 </div>
 
 <div class="dropdown" style="float: left;">
   <button class="dropbtn">Lockdown Friendly</button>
   <div class="dropdown-content" style="left:0;">
-    <a href="/places/filtered_4/True">Yes</a>
-    <a href="/places/filtered_4/False">No</a>
+    <a href="/places/filter_lockdown/True">Yes</a>
+    <a href="/places/filter_lockdown/False">No</a>
   </div>
 </div>
 
 <div class="dropdown" style="float: left;">
   <button class="dropbtn">Budget</button>
   <div class="dropdown-content" style="left:0;">
-    <a href="/places/filtered_5/True">Free</a>
-    <a href="/places/filtered_5/False">Paid entry</a>
+    <a href="/places/filter_free/True">Free</a>
+    <a href="/places/filter_free/False">Paid entry</a>
   </div>
 </div>
 
