@@ -2,34 +2,89 @@
 
 {% block content %}
 
+<h1>Your Bucket List - {{category.name}}</h1>
+<hr>
+
+<div class="dropdown" style="float: left;">
+  <button class="dropbtn">Zones</button>
+  <div class="dropdown-content" style="left:0;">
+    {% for zone in all_zones %}
+    <a href="/places/filter_zone/{{zone.id}}"> {{zone.name}}</a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="dropdown" style="float: left;">
+  <button class="dropbtn">Categories</button>
+  <div class="dropdown-content" style="left:0;">
+    {% for category in all_categories %}
+    <a href="/places/filter_category/{{category.id}}"> {{category.name}}</a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="dropdown" style="float: left;">
+  <button class="dropbtn">Status</button>
+  <div class="dropdown-content" style="left:0;">
+    <a href="/places/filter_visited/False">Not yet been</a>
+    <a href="/places/filter_visited/True">Visited</a>
+  </div>
+</div>
+
+<div class="dropdown" style="float: left;">
+  <button class="dropbtn">Lockdown Friendly</button>
+  <div class="dropdown-content" style="left:0;">
+    <a href="/places/filter_lockdown/True">Yes</a>
+    <a href="/places/filter_lockdown/False">No</a>
+  </div>
+</div>
+
+<div class="dropdown" style="float: left;">
+  <button class="dropbtn">Budget</button>
+  <div class="dropdown-content" style="left:0;">
+    <a href="/places/filter_free/True">Free</a>
+    <a href="/places/filter_free/False">Paid entry</a>
+  </div>
+</div>
+
+<div class="dropdown" style="float: right;">
+  <button class="dropbtn" style="border: 2px solid; border-color: #D79033;">
+    <a href="/places/new" style="text-decoration: none; color: #EDF0F1; font-weight: bolder;">Add new</a>
+  </button>
+</div>
+
 <table>
     {% for location in filtered_locations %}
     <tr>
       <td class="name-cell"><a href="/places/{{category.id}}"> {{location.name}} </a></td>
       <td rowspan="2" class="category-cell">{{location.category.name}}</td>
-      <td rowspan="2" style="font-style: italic;">{{location.description}}</td>
-      <td rowspan="2" class="lf-cell">
-          {% if location.lockdown_friendly == True %}
-            <p>Lockdown friendly!</p>
-          {% else %}
-            <p>Temporarily closed</p>
-          {% endif %}
-        </td>
-        <td rowspan="2" class="free-cell">
-          {% if location.free == True %}
-          <i class="fas fa-pound-sign" style="color: rgb(18, 160, 13)"></i>
-          {% else %}
-          <i class="fas fa-pound-sign" style="color: #D79033"></i>
-          {% endif %}
-        </td>
-        <td rowspan="2" class="zone-cell" style="font-weight: bold;">{{location.zone.name}}</td>
-        <td rowspan="2" class="tick-cell">
-          {% if location.visited == True %}
-            <i class="fas fa-check-circle" style="color: rgb(18, 160, 13); font-size: 2em;"></i>
-          {% else %}
-            <i class="far fa-circle" style="color: #D79033; font-size: 2em;"></i>
-          {% endif %}
-        </td>
+    <td rowspan="2" style="font-style: italic;">{{location.description}}</td>
+    <td rowspan="2" class="lf-cell">
+      {% if location.lockdown_friendly == True %}
+        <p style="color: rgb(18, 160, 13)">Lockdown friendly!</p>
+      {% else %}
+        <p style="color: #D79033">Temporarily closed</p>
+      {% endif %}
+    </td>
+    <td rowspan="2" class="free-cell">
+      {% if location.free == True %}
+      <p style="color: rgb(18, 160, 13)">FREE</p>
+      {% else %}
+      <i class="fas fa-pound-sign" style="color: #D79033"></i>
+      {% endif %}
+    </td>
+    <td rowspan="2" class="zone-cell" style="font-weight: bold;">{{location.zone.name}}</td>
+    <td rowspan="2" class="tick-cell">
+      {% if location.visited == True %}
+      <form action="/places/not_visited/{{location.id}}" method="POST">
+        <button style="display: contents;"><i class="fas fa-check-circle" style="color: rgb(18, 160, 13); font-size: 2.3em;"></i></button>
+      </form>
+      {% else %}
+      <form action="/places/visited/{{location.id}}" method="POST">
+        <button style="display: contents;"><i class="far fa-circle" style="color: #D79033; font-size: 2.3em;"></i></button>
+      </form>
+      {% endif %}
+    </td>
       </tr>
       <tr>
         <td class="image-cell">
