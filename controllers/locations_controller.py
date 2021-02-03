@@ -112,8 +112,14 @@ def show_filtered_locations_by_free_entry(free):
     locations = location_repository.select_by_free_entry(free)
     return render_template('locations/filtered_free.html', filtered_locations = locations)
 
-# Mark place as visited (touching the icon)
+# Mark place as visited (touching the orange icon)
 @locations_blueprint.route("/places/visited/<id>", methods=['POST'])
 def mark_location_visited(id):
     location_repository.mark_visited(id)
+    return redirect('/places')
+
+# Mark place as not visited (touching the green icon, in case you marked location as visited by mistake)
+@locations_blueprint.route("/places/not_visited/<id>", methods=['POST'])
+def mark_location_not_visited(id):
+    location_repository.mark_not_visited(id)
     return redirect('/places')

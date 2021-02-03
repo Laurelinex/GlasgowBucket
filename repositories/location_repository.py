@@ -123,3 +123,8 @@ def mark_visited(id):
     sql = "UPDATE locations SET visited = true WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def mark_not_visited(id):
+    sql = "UPDATE locations SET visited = false WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
