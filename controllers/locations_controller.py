@@ -1,6 +1,6 @@
 from flask import Flask, Blueprint, render_template, redirect, request
 
-from models.location import Location
+from models.location import *
 
 import repositories.location_repository as location_repository
 import repositories.zone_repository as zone_repository
@@ -111,3 +111,9 @@ def show_filtered_locations_by_lockdown_friendliness(lockdown_friendly):
 def show_filtered_locations_by_free_entry(free):
     locations = location_repository.select_by_free_entry(free)
     return render_template('locations/filtered_free.html', filtered_locations = locations)
+
+# Mark place as visited (touching the icon)
+@locations_blueprint.route("/places/visited/<id>", methods=['POST'])
+def mark_location_visited(id):
+    location_repository.mark_visited(id)
+    return redirect('/places')

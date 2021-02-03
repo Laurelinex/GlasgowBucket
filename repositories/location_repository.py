@@ -118,3 +118,8 @@ def select_by_free_entry(free):
         location = Location(row['name'], row['address'], row['description'], zone, category, row['picture'], row['lockdown_friendly'], row['free'], row['visited'], row['id'])
         locations.append(location)
     return locations
+
+def mark_visited(id):
+    sql = "UPDATE locations SET visited = true WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
