@@ -4,7 +4,7 @@ html {
 
 body {
     /* font-family: "Rubik", "Helvetica Neue", "sans-serif"; */
-    /* issues with loading - to ask */
+    /* issues with loading */
     font-family: "Helvetica Neue", "sans-serif";
     font-weight: normal;
     font-style: normal;
@@ -19,8 +19,7 @@ body {
 }
 .grid-container {
     display: grid;
-    grid-template-columns: 75% 25%;
-    /* grid-template-rows: 100px 300px; */
+    grid-template-columns: 70% 30%;
     grid-gap: 10px;
     padding: 10px;
 }
@@ -45,14 +44,15 @@ body {
 
 .grid-container aside {
     text-align: center;
-    /* border-left: 5px solid #0C1C2C; */
 }
 
-/* For MVP version */
 h1, p {
     color: #0C1C2C;
 }
 
 #content {
-    margin: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }

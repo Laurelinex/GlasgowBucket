@@ -9,13 +9,14 @@
 }
 
 .logo {
-    padding-top: 10px;
-    padding-left: 10px;
+    padding-top: 9%;
+    padding-left: 12%;
 }
 
 .main-nav {
     display: flex;
     margin-left: auto;
+    padding-right: 1.8%;
 }
 
 .main-nav li {
@@ -24,19 +25,26 @@
 
 .main-nav a {
     display: block;
-    background: #EDF0F1;
-    color: #0C1C2C;
     text-decoration: none;
-    padding: 10px;
+    padding: 14px;
     margin: 5px;
     border-radius: 50px;
-    border: 2px solid #0C1C2C;
-}
-
-.main-nav a:hover {
+    /* border: 2px solid #0C1C2C; */
+    /* background: #EDF0F1;
+    color: #0C1C2C;
+    border: 2px solid #D79033; */
     background:#0C1C2C;
     color: #EDF0F1;
     border: 2px solid #EDF0F1;
+}
+
+.main-nav a:hover {
+    /* background:#0C1C2C;
+    color: #EDF0F1;
+    border: 2px solid #EDF0F1; */
+    background: #EDF0F1;
+    color: #0C1C2C;
+    border: 2px solid #D79033;
 }
 
 /* active not working */
