@@ -16,9 +16,5 @@ def main():
 def about():
     return render_template('about.html')
 
-# @app.route("/bucket")
-# def bucket():
-#     return render_template('bucket.html')
-
 if __name__ == '__main__':
     app.run()

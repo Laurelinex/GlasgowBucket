@@ -5,23 +5,23 @@
     <h3 style="font-weight: bold;">{{location.name}}</h3>
     <hr>
     <p>{{location.description}}</p>
-    {% if location.visited == True %}
-      <p style="color: green">You've been! √</p>
-    {% else %}
-    {% endif %}
-      </p>
-    {% if location.lockdown_friendly == True %}
-      <p style="font-style: italic;">This is located in the {{location.zone.name}} and you can visit during lockdown!</p>
-    {% else %}
-      <p style="font-style: italic;">This is located in the {{location.zone.name}} but is temporarily closed.</p>
-    {% endif %}
+
+      {% if location.visited == True %}
+        <p style="color: green">You've been! √</p>
+      {% endif %}
+      
+      {% if location.lockdown_friendly == True %}
+        <p style="font-style: italic;">This is located in the {{location.zone.name}} and you can visit during lockdown!</p>
+      {% else %}
+        <p style="font-style: italic;">This is located in the {{location.zone.name}} but is temporarily closed.</p>
+      {% endif %}
 
       {% if location.free == True %}
         <p style="font-style: italic;">It's FREE!</p>
       {% endif %}
-      <!-- No else statement because of Food & Drinks places -->
+    <!-- No else statement because of Food & Drinks places -->
 
-      <p style="font-style: italic;">{{location.address}}</p>
+    <p style="font-style: italic;">{{location.address}}</p>
 
     <div class="edit-delete-buttons">
       <a href="/places/{{location.id}}/edit"><i class="fas fa-pencil-alt" style="color: chocolate; font-size: 1.7em;"></i></a>
@@ -30,9 +30,9 @@
       </form>
     </div>
     
-    {% if location.picture | length != 0 %}
-      <div class="show-image-img"><img src="{{location.picture}}" alt="Picture of {{location.name}}"></div>
-    {% endif %}
+      {% if location.picture | length != 0 %}
+        <div class="show-image-img"><img src="{{location.picture}}" alt="Picture of {{location.name}}"></div>
+      {% endif %}
   </div>
 
 {% endblock %}

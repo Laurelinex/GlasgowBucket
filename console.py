@@ -43,8 +43,6 @@ category_repository.save(category_8)
 category_9 = Category("Other")
 category_repository.save(category_9)
 
-# LF, FREE, VISITED (T/F)
-
 # City Centre
 location_1 = Location("Duke of Wellington Statue", "16 Royal Exchange Square, G1 3AG", "This beconed statue has become a symbol of Glasgow's quirky sense of humour. Glasgow City Council found out the hard way; touch the cone at your peril.", zone_1, category_8, "https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Fsundaytimes%2Fprod%2Fweb%2Fbin%2F9637735a-8f9e-11e9-93de-1ab642214bd5.jpg?crop=2667%2C1500%2C0%2C0&resize=1180", True, True, True)
 location_repository.save(location_1)

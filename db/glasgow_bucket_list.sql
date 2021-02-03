@@ -2,7 +2,6 @@ DROP TABLE IF EXISTS locations;
 DROP TABLE IF EXISTS zones;
 DROP TABLE IF EXISTS categories;
 
-
 CREATE TABLE zones (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),

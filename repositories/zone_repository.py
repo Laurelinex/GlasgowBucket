@@ -15,11 +15,6 @@ def delete_all():
     sql = "DELETE FROM zones"
     run_sql(sql)
 
-def delete(id):
-    sql = "DELETE ROM zones WHERE id = %s"
-    values = [id]
-    run_sql(sql, values)
-
 def select_all():
     zones = []
 
@@ -41,7 +36,16 @@ def select(id):
         zone = Zone(result['name'], result['description'], result['picture'], result['id'] )
     return zone
 
+# Note: below functions aren't used in the code but were part of the initial MVP and working.
+# I left them out because it wouldn;t make sense for the user to be able to update or remove a specific zone in Glasgow.
+# I know the North isn't very popular but still.
+
 def update(zone):
     sql = "UPDATE zones SET name = %s WHERE id = %s"
     values = [zone.name, zone.description, zone.picture, zone.id]
+    run_sql(sql, values)
+
+def delete(id):
+    sql = "DELETE ROM zones WHERE id = %s"
+    values = [id]
     run_sql(sql, values)

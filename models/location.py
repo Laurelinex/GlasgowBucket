@@ -11,9 +11,3 @@ class Location:
         self.free = free
         self.visited = visited
         self.id = id
-
-    def mark_visited(self):
-        self.visited = True
-
-    def add_picture(self, picture_url):
-        self.picture = picture_url

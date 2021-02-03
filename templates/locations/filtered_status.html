@@ -9,7 +9,7 @@
   <button class="dropbtn">Zones</button>
   <div class="dropdown-content" style="left:0;">
     {% for zone in all_zones %}
-    <a href="/places/filter_zone/{{zone.id}}"> {{zone.name}}</a>
+      <a href="/places/filter_zone/{{zone.id}}"> {{zone.name}}</a>
     {% endfor %}
   </div>
 </div>
@@ -18,7 +18,7 @@
   <button class="dropbtn">Categories</button>
   <div class="dropdown-content" style="left:0;">
     {% for category in all_categories %}
-    <a href="/places/filter_category/{{category.id}}"> {{category.name}}</a>
+      <a href="/places/filter_category/{{category.id}}"> {{category.name}}</a>
     {% endfor %}
   </div>
 </div>
@@ -68,28 +68,28 @@
     </td>
     <td rowspan="2" class="free-cell">
       {% if location.free == True %}
-      <p style="color: rgb(18, 160, 13)">FREE</p>
+        <p style="color: rgb(18, 160, 13)">FREE</p>
       {% else %}
-      <i class="fas fa-pound-sign" style="color: #D79033"></i>
+        <i class="fas fa-pound-sign" style="color: #D79033"></i>
       {% endif %}
     </td>
     <td rowspan="2" class="zone-cell" style="font-weight: bold;">{{location.zone.name}}</td>
     <td rowspan="2" class="tick-cell">
       {% if location.visited == True %}
-      <form action="/places/not_visited/{{location.id}}" method="POST">
-        <button style="display: contents;"><i class="fas fa-check-circle" style="color: rgb(18, 160, 13); font-size: 2.3em;"></i></button>
-      </form>
+        <form action="/places/not_visited/{{location.id}}" method="POST">
+          <button style="display: contents;"><i class="fas fa-check-circle" style="color: rgb(18, 160, 13); font-size: 2.3em;"></i></button>
+        </form>
       {% else %}
-      <form action="/places/visited/{{location.id}}" method="POST">
-        <button style="display: contents;"><i class="far fa-circle" style="color: #D79033; font-size: 2.3em;"></i></button>
-      </form>
+        <form action="/places/visited/{{location.id}}" method="POST">
+          <button style="display: contents;"><i class="far fa-circle" style="color: #D79033; font-size: 2.3em;"></i></button>
+        </form>
       {% endif %}
     </td>
   </tr>
   <tr>
     <td class="image-cell">
       {% if location.picture | length != 0 %}
-      <a href="/places/{{location.id}}"><img src="{{location.picture}}" alt="picture of {{location.name}}"></a>
+        <a href="/places/{{location.id}}"><img src="{{location.picture}}" alt="picture of {{location.name}}"></a>
       {% endif %}
     </td>
   </tr>
