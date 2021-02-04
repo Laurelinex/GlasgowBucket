@@ -16,7 +16,7 @@ Build an app to track someone's progress at discovering Glagsow.
  * Have an About Glasgow section
  * Allow user to upload pictures (with url) when creating or editing a location
  * Have custom logo in the header that links to homepage
- * Have an additional Class for Categories (many to many relationship)
+ * Have an additional Class for Categories
  * Can filter bucket by zones, places visited, entry fee, lockdown friendly, etc.
  * Landing page with instructions on how to use the app and some Glasgow celebs about
  * Clicking on circle can mark a place visited/not visited (bypassing edit page)
