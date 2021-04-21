@@ -3,9 +3,9 @@ html {
 }
 
 body {
-    /* font-family: "Rubik", "Helvetica Neue", "sans-serif"; */
+    font-family: "Rubik", "Helvetica Neue", "sans-serif";
     /* issues with loading */
-    font-family: "Helvetica Neue", "sans-serif";
+    /* font-family: "Helvetica Neue", "sans-serif"; */
     font-weight: normal;
     font-style: normal;
     font-display: swap;

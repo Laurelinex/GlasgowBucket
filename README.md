@@ -24,7 +24,14 @@ Build an app to track someone's progress at discovering Glagsow.
 
 ### Instructions to run web app
 
- * Create database 'glasgow_bucket_list'
- * Link database with file 'glasgow_bucket_list.sql' in the db folder
- * Run 'console.py' to populate db
- * Run Flask on the same level as 'app.py'
+ * Cloned repo should run under Flask at http://localhost:5000
+ * Run the script on the same level as 'app.py' - flask run
+
+<h3>Technologies Used</h3>
+Python, HTML, CSS, Flask, Jinja2, PostgreSQL
+
+<h3>Screenshots of the app running</h3>
+
+<img src="https://github.com/Laurelinex/Glasgow_Bucket/blob/main/static/readme/gb_1_intro.png">
+<img src="https://github.com/Laurelinex/Glasgow_Bucket/blob/main/static/readme/gb_2_bucket.png">
+<img src="https://github.com/Laurelinex/Glasgow_Bucket/blob/main/static/readme/gb_3_filtering.png">
